@@ -307,18 +307,24 @@ main,#footer{ position:relative; z-index:2; background:#fff; }
 
 /* ---- La porte Sésame --------------------------------------------------- */
 #sesame{
-  background:var(--green-deep); color:var(--ivory);
-  padding:clamp(90px,12vw,180px) 0; text-align:center; position:relative; overflow:hidden;
+  background:var(--green-deep); color:rgba(239,237,232,.78);
+  padding:clamp(90px,12vw,180px) 0; position:relative; overflow:hidden;
 }
-#sesame h2{ color:var(--ivory); }
+#sesame .bl{ align-items:center; }
+#sesame .lede{ color:var(--ivory); }
+#sesame .overline{ color:var(--gold); }
+#sesame .btn-outline{ border-color:rgba(239,237,232,.55); color:var(--ivory); }
+#sesame .btn-outline:hover{ background:var(--ivory); color:var(--green-deep); }
+#sesame .door-btn{ width:100%; }
+#sesame h2,#sesame .bl-h{ color:var(--ivory); }
 #sesame .subtitle{ color:var(--gold); }
-#sesame p{ color:rgba(239,237,232,.75); max-width:56ch; margin-left:auto; margin-right:auto; }
+#sesame p{ color:rgba(239,237,232,.75); }
 
 .door-btn{
   display:inline-block; border:0; background:none; padding:26px; cursor:pointer;
   margin:14px 0 26px;
 }
-.door-btn svg{ width:clamp(150px,15vw,210px); height:auto; overflow:visible; }
+.door-btn svg{ width:100%; max-width:260px; height:auto; overflow:visible; }
 .door-btn .leaf{ transition:transform 2400ms var(--ease-door); }
 .door-btn .leaf-l{ transform-origin:38px 70px; }
 .door-btn .leaf-r{ transform-origin:88px 70px; }
@@ -665,3 +671,78 @@ body.hero-dark #header:not(.sticky) .mark{ filter:drop-shadow(0 1px 14px rgba(18
 .u-body h3::before{
   content:''; display:block; flex:0 0 auto; width:38px; height:1px; background:var(--ink);
 }
+
+/* =========================================================================
+   Le système de blocs, relevé sur les captures de passalacqua.it
+   Colonnes : 32 % / 68 %, gouttière 30 px. Trois ou quatre colonnes égales.
+   ========================================================================= */
+.bl{ display:flex; gap:30px; align-items:flex-start; }
+.bl.reverse{ flex-direction:row-reverse; }
+.c-n{ flex:0 0 auto; width:32%; }
+.c-w{ flex:0 0 auto; width:calc(68% - 30px); }
+.c-3{ flex:0 0 auto; width:calc(33.3333% - 20px); }
+.c-4{ flex:0 0 auto; width:calc(25% - 22.5px); }
+@media(max-width:1023px){
+  .bl{ flex-direction:column; gap:40px; }
+  .bl.reverse{ flex-direction:column; }
+  .c-n,.c-w,.c-3,.c-4{ width:100%; }
+}
+@media(min-width:700px) and (max-width:1023px){
+  .bl.keep{ flex-direction:row; }
+  .bl.keep .c-4{ width:calc(50% - 15px); }
+}
+
+/* Le titre d'un bloc, puis le sur-titre EN DESSOUS — c'est leur ordre */
+.bl-h{ font-size:44px; line-height:1.15em; margin-bottom:14px; }
+.overline{
+  display:block; font-family:var(--sans); font-weight:400;
+  font-size:13px; line-height:1.6em; letter-spacing:1px;
+  text-transform:uppercase; color:var(--ink); margin-bottom:38px;
+}
+/* Le corps des blocs de mise en avant est en serif, et grand */
+.lede{
+  font-family:var(--serif); font-weight:300;
+  font-variation-settings:'SOFT' 0,'WONK' 0,'opsz' 144;
+  font-size:26px; line-height:1.45em; color:var(--ink);
+}
+.lede + .lede{ margin-top:1.1em; }
+@media(max-width:1023px){
+  .bl-h{ font-size:32px; }
+  .lede{ font-size:20px; }
+}
+
+/* Le libellé sous une vignette : filet puis serif */
+.cap{
+  display:flex; align-items:center; gap:26px;
+  font-family:var(--serif); font-weight:300;
+  font-variation-settings:'SOFT' 0,'WONK' 0,'opsz' 144;
+  font-size:26px; line-height:1.3em; color:var(--ink); margin:22px 0 0;
+}
+.cap::before{
+  content:''; flex:0 0 auto; width:55px; height:1px; background:var(--ink);
+}
+@media(max-width:1023px){ .cap{ font-size:21px; gap:18px; } .cap::before{ width:38px; } }
+
+/* Les voix : colonne centrée, images décalées aux angles arrondis */
+.voices-txt{ text-align:center; }
+.voices-txt .overline{ margin-bottom:18px; }
+.voices-txt .bl-h{ font-size:28px; line-height:1.4em; margin-bottom:34px; }
+.voices-q{
+  font-family:var(--serif); font-weight:300; font-style:italic;
+  font-size:23px; line-height:1.7em; color:var(--ink); margin:0 0 34px;
+}
+.voices-img{ position:relative; min-height:520px; }
+.voices-img img{ position:absolute; border-radius:14px; object-fit:cover; }
+.voices-img img:first-child{ top:0; right:0; width:72%; height:66%; }
+.voices-img img:last-child{ bottom:0; left:0; width:58%; height:58%; }
+@media(max-width:1023px){
+  .voices-img{ min-height:0; display:flex; gap:16px; }
+  .voices-img img{ position:static; width:50%; height:auto; aspect-ratio:1/1; }
+}
+
+/* Une image dans un bloc remplit sa colonne */
+.bl .picture img{ width:100%; display:block; }
+/* Le bouton porte le libellé : l'indication sous la porte fait doublon */
+#sesame .door-hint{ display:none; }
+/* Les sur-titres sont de la même encre partout */
+.page-head .subtitle{ color:var(--ink); }
