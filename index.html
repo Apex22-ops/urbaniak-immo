@@ -7,7 +7,11 @@
 <meta name="description" content="Nous gérons des portefeuilles immobiliers de sociétés et de particuliers : location saisonnière, bail mobilité, longue durée, bureaux et commerces. Un interlocuteur unique, des automatisations qui tiennent la cadence, des tableaux de bord lisibles.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<!-- Switzer : la police du site de référence, servie depuis le même CDN.
+     Fraunces tient lieu de Canela, qui est sous licence payante. -->
+<link href="https://api.fontshare.com/v2/css?f%5B%5D=switzer@300,400,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@144,300;144,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="hero-dark">
@@ -17,30 +21,32 @@
 
 <!-- ===================== EN-TÊTE ===================== -->
 <header id="header">
-  <div class="wrap">
-    <div class="h-side">
-      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-      <a href="expertise.html" class="h-nav d-lg">Notre expertise</a>
-    </div>
+  <div class="bar">
+    <div class="wrap">
+      <div class="h-side">
+        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+        <a href="expertise.html" class="h-nav d-lg">Notre expertise</a>
+      </div>
 
-    <a href="index.html" class="brand" aria-label="Urbaniak — accueil">
-      <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true">
-        <path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/>
-        <path class="mark-gold" d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/>
-        <path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/>
-        <path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/>
-        <path d="M2 106 H124" stroke="currentColor" stroke-width="6"/>
-      </svg>
-      <span class="lettering">
-        <span class="name">Urbaniak</span>
-        <span class="base">Gestion de patrimoine immobilier</span>
-      </span>
-    </a>
+      <a href="index.html" class="brand" aria-label="Urbaniak — accueil">
+        <!-- Par-dessus la photo : le verrouillage vertical -->
+        <span class="lock lock-stack">
+          <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true"><path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/><path class="mark-gold" d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/><path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/><path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/><path d="M2 106 H124" stroke="currentColor" stroke-width="6"/></svg>
+          <span class="name">Urbaniak</span>
+          <span class="base">Gestion de patrimoine immobilier</span>
+        </span>
+        <!-- Une fois collé : le verrouillage horizontal, plus large -->
+        <span class="lock lock-row">
+          <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true"><path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/><path class="mark-gold" d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/><path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/><path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/><path d="M2 106 H124" stroke="currentColor" stroke-width="6"/></svg>
+          <span class="name">Urbaniak</span>
+        </span>
+      </a>
 
-    <div class="h-side right">
-      <a href="contact.html" class="h-nav">Confier un bien</a>
+      <div class="h-side right">
+        <a href="contact.html" class="h-nav">Confier un bien</a>
+      </div>
     </div>
   </div>
 </header>
@@ -90,7 +96,6 @@
     <span class="subtitle hero-t">Gestion de patrimoine immobilier</span>
     <h1 class="hero-t">Chaque bien a une porte.<br>Encore faut-il savoir <em>laquelle ouvrir</em>.</h1>
   </div>
-  <span class="scroll-cue"><i></i>Découvrir</span>
 </section>
 
 <main>
@@ -98,10 +103,10 @@
   <!-- ---- Déclaration ---- -->
   <div class="sp-lg"></div>
   <section class="wrap">
-    <div class="s-intro">
-      <span class="subtitle rv">Ce que nous faisons</span>
-      <h2 class="rv">Nous prenons en charge des portefeuilles immobiliers entiers — de sociétés comme de particuliers — et nous les faisons travailler.</h2>
-      <p class="lead rv">Un appartement isolé, une dizaine de lots, un immeuble complet, des bureaux à relouer. Nous regardons d'abord ce que vous avez, nous disons honnêtement ce qu'il peut devenir, puis nous l'exploitons de bout en bout. Vous gardez la propriété et les décisions. Nous prenons tout le reste.</p>
+    <div class="s-intro" data-animation>
+      <span class="subtitle">Ce que nous faisons</span>
+      <h2>Nous prenons en charge des portefeuilles immobiliers entiers — de sociétés comme de particuliers — et nous les faisons travailler.</h2>
+      <p class="lead">Un appartement isolé, une dizaine de lots, un immeuble complet, des bureaux à relouer. Nous regardons d'abord ce que vous avez, nous disons honnêtement ce qu'il peut devenir, puis nous l'exploitons de bout en bout. Vous gardez la propriété et les décisions. Nous prenons tout le reste.</p>
     </div>
   </section>
 
@@ -109,17 +114,17 @@
   <div class="sp-lg"></div>
   <section class="wrap s-split">
     <div class="row">
-      <div class="col c5">
-        <div class="picture ratio-tall rv-img">
+      <div class="col c5" data-animation>
+        <div class="picture ratio-tall">
           <img src="assets/signature.jpg" alt="Porte voûtée en pierre dans une ruelle de village provençal" loading="lazy">
         </div>
       </div>
-      <div class="col c7">
-        <span class="subtitle rv">La maison</span>
-        <h2 class="rv">J'ai mis mon nom de famille sur la porte.</h2>
-        <p class="rv">Urbaniak n'est pas une enseigne rachetée à un réseau. C'est mon nom, celui que portent mes parents et que porteront mes enfants. Quand il figure sur un mandat, il engage plus qu'une signature.</p>
-        <p class="rv">C'est pour cette raison qu'aucun bien confié n'est traité comme une ligne dans un tableau. Je connais chaque adresse, chaque locataire difficile, chaque chaudière capricieuse. Je m'occupe de vos biens comme des miens — parce que c'est exactement le même geste.</p>
-        <p class="signature rv">Dominika Urbaniak</p>
+      <div class="col c7" data-animation>
+        <span class="subtitle">La maison</span>
+        <h2>J'ai mis mon nom de famille sur la porte.</h2>
+        <p>Urbaniak n'est pas une enseigne rachetée à un réseau. C'est mon nom, celui que portent mes parents et que porteront mes enfants. Quand il figure sur un mandat, il engage plus qu'une signature.</p>
+        <p>C'est pour cette raison qu'aucun bien confié n'est traité comme une ligne dans un tableau. Je connais chaque adresse, chaque locataire difficile, chaque chaudière capricieuse. Je m'occupe de vos biens comme des miens — parce que c'est exactement le même geste.</p>
+        <p class="signature">Dominika Urbaniak</p>
       </div>
     </div>
   </section>
@@ -127,39 +132,39 @@
   <!-- ---- Les usages ---- -->
   <div class="sp-lg"></div>
   <section class="wrap">
-    <div class="s-intro">
-      <span class="subtitle rv">Tous les usages</span>
-      <h2 class="rv">Un même bien peut rapporter très différemment selon la manière dont on le loue.</h2>
-      <p class="lead rv">Nous ne poussons pas un format : nous chiffrons les quatre, et nous retenons celui qui sert votre situation — fiscalité, horizon de revente, envie d'y revenir un été.</p>
+    <div class="s-intro" data-animation>
+      <span class="subtitle">Tous les usages</span>
+      <h2>Un même bien peut rapporter très différemment selon la manière dont on le loue.</h2>
+      <p class="lead">Nous ne poussons pas un format : nous chiffrons les quatre, et nous retenons celui qui sert votre situation — fiscalité, horizon de revente, envie d'y revenir un été.</p>
     </div>
     <div class="sp-sm"></div>
     <div class="row usages">
-      <div class="col c3">
-        <div class="picture ratio-sq rv-img"><img src="assets/saisonnier.jpg" alt="Parasols d'un club de plage face à la mer, presqu'île de Saint-Tropez" loading="lazy"></div>
+      <div class="col c3" data-animation>
+        <div class="picture ratio-sq"><img src="assets/saisonnier.jpg" alt="Parasols d'un club de plage face à la mer, presqu'île de Saint-Tropez" loading="lazy"></div>
         <div class="u-body">
-          <h3 class="rv">Location saisonnière</h3>
-          <p class="rv">Loué à la nuitée, géré de bout en bout, tarifé au jour le jour et référencé sur Sesame Stays.</p>
+          <h3>Location saisonnière</h3>
+          <p>Loué à la nuitée, géré de bout en bout, tarifé au jour le jour et référencé sur Sesame Stays.</p>
         </div>
       </div>
-      <div class="col c3">
-        <div class="picture ratio-sq rv-img"><img src="assets/mobilite.jpg" alt="La pyramide du Louvre et le palais illuminés à la tombée de la nuit" loading="lazy"></div>
+      <div class="col c3" data-animation>
+        <div class="picture ratio-sq"><img src="assets/mobilite.jpg" alt="La pyramide du Louvre et le palais illuminés à la tombée de la nuit" loading="lazy"></div>
         <div class="u-body">
-          <h3 class="rv">Bail mobilité</h3>
-          <p class="rv">Un à dix mois, meublé, sans dépôt de garantie. Le format des missions, des mutations et des études.</p>
+          <h3>Bail mobilité</h3>
+          <p>Un à dix mois, meublé, sans dépôt de garantie. Le format des missions, des mutations et des études.</p>
         </div>
       </div>
-      <div class="col c3">
-        <div class="picture ratio-sq rv-img"><img src="assets/longue.jpg" alt="Maisons à colombages normandes du centre de Deauville" loading="lazy"></div>
+      <div class="col c3" data-animation>
+        <div class="picture ratio-sq"><img src="assets/longue.jpg" alt="Maisons à colombages normandes du centre de Deauville" loading="lazy"></div>
         <div class="u-body">
-          <h3 class="rv">Habitation longue durée</h3>
-          <p class="rv">Vide ou meublé, bail classique. Sélection du dossier, garanties, quittances et révisions annuelles.</p>
+          <h3>Habitation longue durée</h3>
+          <p>Vide ou meublé, bail classique. Sélection du dossier, garanties, quittances et révisions annuelles.</p>
         </div>
       </div>
-      <div class="col c3">
-        <div class="picture ratio-sq rv-img"><img src="assets/bureaux.jpg" alt="Immeubles de la place du Casino et terrasses plantées, Monte-Carlo" loading="lazy"></div>
+      <div class="col c3" data-animation>
+        <div class="picture ratio-sq"><img src="assets/bureaux.jpg" alt="Immeubles de la place du Casino et terrasses plantées, Monte-Carlo" loading="lazy"></div>
         <div class="u-body">
-          <h3 class="rv">Bureaux &amp; commerces</h3>
-          <p class="rv">Baux professionnels et commerciaux, aménagement des plateaux, suivi des preneurs et des charges.</p>
+          <h3>Bureaux &amp; commerces</h3>
+          <p>Baux professionnels et commerciaux, aménagement des plateaux, suivi des preneurs et des charges.</p>
         </div>
       </div>
     </div>
@@ -169,16 +174,16 @@
   <div class="sp-lg"></div>
   <section class="wrap s-split">
     <div class="row">
-      <div class="col c8">
-        <div class="picture ratio-wide rv-img">
+      <div class="col c8" data-animation>
+        <div class="picture ratio-wide">
           <img src="assets/audit.jpg" alt="Immeubles haussmanniens et magnolias en fleur, la tour Eiffel au fond" loading="lazy">
         </div>
       </div>
-      <div class="col c4">
-        <span class="subtitle rv">01 — L'audit</span>
-        <h3 class="rv">Savoir exactement ce que vaut chaque mètre carré, et pour quel usage.</h3>
-        <p class="rv">Nous visitons, mesurons, photographions. Nous comparons votre bien au marché réel de sa rue, pas à une moyenne d'arrondissement. Nous vérifions ce que la copropriété, le bail et la ville autorisent.</p>
-        <p class="link rv"><a href="expertise.html#audit">Le détail de l'audit</a></p>
+      <div class="col c4" data-animation>
+        <span class="subtitle">01 — L'audit</span>
+        <h3>Savoir exactement ce que vaut chaque mètre carré, et pour quel usage.</h3>
+        <p>Nous visitons, mesurons, photographions. Nous comparons votre bien au marché réel de sa rue, pas à une moyenne d'arrondissement. Nous vérifions ce que la copropriété, le bail et la ville autorisent.</p>
+        <p class="link"><a href="expertise.html#audit">Le détail de l'audit</a></p>
       </div>
     </div>
   </section>
@@ -187,22 +192,22 @@
   <div class="sp-md"></div>
   <section class="wrap">
     <div class="row">
-      <div class="col c6">
-        <div class="picture ratio-tall rv-img">
+      <div class="col c6" data-animation>
+        <div class="picture ratio-tall">
           <img src="assets/arbitrage.jpg" alt="Le Casino de Monte-Carlo et l'Hôtel de Paris vus d'une terrasse" loading="lazy">
         </div>
         <div style="padding-top:26px">
-          <h3 class="rv">L'arbitrage</h3>
-          <p class="rv">Saisonnier, bail mobilité, longue durée, bureau, vente : chaque piste est chiffrée, avec ses contraintes et son rendement net.</p>
+          <h3>L'arbitrage</h3>
+          <p>Saisonnier, bail mobilité, longue durée, bureau, vente : chaque piste est chiffrée, avec ses contraintes et son rendement net.</p>
         </div>
       </div>
-      <div class="col c6">
-        <div class="picture ratio-tall rv-img">
+      <div class="col c6" data-animation>
+        <div class="picture ratio-tall">
           <img src="assets/scene.jpg" alt="Jeu de backgammon ouvert sur un transat, plage de Pampelonne" loading="lazy">
         </div>
         <div style="padding-top:26px">
-          <h3 class="rv">La mise en scène</h3>
-          <p class="rv">Design, mobilier, petits travaux, reportage photo : un bien se loue d'abord sur ce qu'il donne à voir, puis se garde sur ce qu'il fait vivre.</p>
+          <h3>La mise en scène</h3>
+          <p>Design, mobilier, petits travaux, reportage photo : un bien se loue d'abord sur ce qu'il donne à voir, puis se garde sur ce qu'il fait vivre.</p>
         </div>
       </div>
     </div>
@@ -213,15 +218,15 @@
   <section class="s-tech">
     <div class="wrap">
       <div class="row">
-        <div class="col c5">
-          <span class="subtitle rv">02 — La machine</span>
-          <h2 class="rv">Une gestion à l'ancienne ne tient plus la cadence. La nôtre est automatisée.</h2>
-          <p class="rv">Les messages aux locataires, les codes d'accès, les plannings de ménage, les relances d'impayés, les rapprochements bancaires : tout ce qui est répétitif est confié à des automatisations pilotées par intelligence artificielle. Elles ne dorment pas, n'oublient rien et ne partent pas en vacances au mois d'août.</p>
-          <p class="rv">Ce que la machine libère, nous le rendons en attention humaine : les arbitrages, les visites, les négociations, les urgences du dimanche soir.</p>
+        <div class="col c5" data-animation>
+          <span class="subtitle">02 — La machine</span>
+          <h2>Une gestion à l'ancienne ne tient plus la cadence. La nôtre est automatisée.</h2>
+          <p>Les messages aux locataires, les codes d'accès, les plannings de ménage, les relances d'impayés, les rapprochements bancaires : tout ce qui est répétitif est confié à des automatisations pilotées par intelligence artificielle. Elles ne dorment pas, n'oublient rien et ne partent pas en vacances au mois d'août.</p>
+          <p>Ce que la machine libère, nous le rendons en attention humaine : les arbitrages, les visites, les négociations, les urgences du dimanche soir.</p>
         </div>
-        <div class="col c7">
+        <div class="col c7" data-animation>
           <!-- Illustration du tableau de bord propriétaire (valeurs d'exemple) -->
-          <div class="dash rv-img" role="img" aria-label="Aperçu du tableau de bord propriétaire : taux d'occupation, revenus encaissés, interventions et journal des automatisations">
+          <div class="dash" role="img" aria-label="Aperçu du tableau de bord propriétaire : taux d'occupation, revenus encaissés, interventions et journal des automatisations">
             <div class="dash-top">
               <span class="dash-title">Tableau de bord — portefeuille</span>
               <span class="dash-live"><i></i>en direct</span>
@@ -253,16 +258,16 @@
   <div class="sp-lg"></div>
   <section class="wrap s-split reverse">
     <div class="row">
-      <div class="col c8">
-        <div class="picture ratio-wide rv-img">
+      <div class="col c8" data-animation>
+        <div class="picture ratio-wide">
           <img src="assets/gestion.jpg" alt="Ruelle fleurie de lauriers blancs dans un village de la presqu'île de Saint-Tropez" loading="lazy">
         </div>
       </div>
-      <div class="col c4">
-        <span class="subtitle rv">03 — La gestion</span>
-        <h2 class="rv">Vous ne recevez plus qu'un relevé.</h2>
-        <p class="rv">Mise sur le marché, sélection des locataires, états des lieux, ménage, maintenance, urgences du dimanche soir : nous tenons la ligne. Vous gardez la décision, nous prenons l'exécution.</p>
-        <p class="link rv"><a href="gestion.html">La gestion locative</a></p>
+      <div class="col c4" data-animation>
+        <span class="subtitle">03 — La gestion</span>
+        <h2>Vous ne recevez plus qu'un relevé.</h2>
+        <p>Mise sur le marché, sélection des locataires, états des lieux, ménage, maintenance, urgences du dimanche soir : nous tenons la ligne. Vous gardez la décision, nous prenons l'exécution.</p>
+        <p class="link"><a href="gestion.html">La gestion locative</a></p>
       </div>
     </div>
   </section>
@@ -271,33 +276,33 @@
   <div class="sp-lg"></div>
   <section class="wrap">
     <div class="row">
-      <div class="col c4">
-        <span class="subtitle rv">Les métiers</span>
-        <h2 class="rv">Un seul interlocuteur, six savoir-faire.</h2>
+      <div class="col c4" data-animation>
+        <span class="subtitle">Les métiers</span>
+        <h2>Un seul interlocuteur, six savoir-faire.</h2>
       </div>
-      <div class="col c8">
+      <div class="col c8" data-animation>
         <div class="s-list">
-          <div class="s-item rv"><span class="num">01</span><div class="body">
+          <div class="s-item"><span class="num">01</span><div class="body">
             <h3>Audit &amp; conseil</h3>
             <p>Diagnostic du bien, étude du marché local, arbitrage entre les usages possibles, projection de rendement.</p>
           </div></div>
-          <div class="s-item rv"><span class="num">02</span><div class="body">
+          <div class="s-item"><span class="num">02</span><div class="body">
             <h3>Mise sur le marché</h3>
             <p>Reportage photo, annonces, tarification dynamique, diffusion sur les plateformes et sur Sesame Stays.</p>
           </div></div>
-          <div class="s-item rv"><span class="num">03</span><div class="body">
+          <div class="s-item"><span class="num">03</span><div class="body">
             <h3>Gestion locative</h3>
             <p>Réservations, contrats, états des lieux, encaissements, relation locataire, reporting mensuel.</p>
           </div></div>
-          <div class="s-item rv"><span class="num">04</span><div class="body">
+          <div class="s-item"><span class="num">04</span><div class="body">
             <h3>Ménage &amp; linge</h3>
             <p>Équipes formées, protocole hôtelier, linge blanchi, consommables réassortis entre chaque séjour.</p>
           </div></div>
-          <div class="s-item rv"><span class="num">05</span><div class="body">
+          <div class="s-item"><span class="num">05</span><div class="body">
             <h3>Maintenance &amp; petits travaux</h3>
             <p>Interventions courantes, artisans de confiance, suivi des chantiers, garantie de remise en état.</p>
           </div></div>
-          <div class="s-item rv"><span class="num">06</span><div class="body">
+          <div class="s-item"><span class="num">06</span><div class="body">
             <h3>Design &amp; aménagement</h3>
             <p>Décoration, achat de mobilier, mise en valeur des volumes, identité propre à chaque adresse.</p>
           </div></div>
@@ -311,15 +316,15 @@
   <section class="s-band">
     <div class="wrap">
       <div class="row">
-        <div class="col c4">
-          <span class="subtitle rv">La maison en bref</span>
-          <h2 class="rv">Une gestion qui se mesure.</h2>
+        <div class="col c4" data-animation>
+          <span class="subtitle">La maison en bref</span>
+          <h2>Une gestion qui se mesure.</h2>
         </div>
-        <div class="col c8">
+        <div class="col c8" data-animation>
           <div class="stats">
-            <div class="stat rv"><div class="n">1</div><div class="l">interlocuteur par propriétaire, du mandat à la revente</div></div>
-            <div class="stat rv"><div class="n">24 h</div><div class="l">délai de réponse aux urgences, week-ends compris</div></div>
-            <div class="stat rv"><div class="n">100 %</div><div class="l">des mouvements visibles sur votre tableau de bord</div></div>
+            <div class="stat"><div class="n">1</div><div class="l">interlocuteur par propriétaire, du mandat à la revente</div></div>
+            <div class="stat"><div class="n">24 h</div><div class="l">délai de réponse aux urgences, week-ends compris</div></div>
+            <div class="stat"><div class="n">100 %</div><div class="l">des mouvements visibles sur votre tableau de bord</div></div>
           </div>
         </div>
       </div>
@@ -329,10 +334,10 @@
   <!-- ---- Partout ---- -->
   <div class="sp-lg"></div>
   <section class="wrap">
-    <div class="s-intro">
-      <span class="subtitle rv">Où nous intervenons</span>
-      <h2 class="rv">Partout où vous avez un bien.</h2>
-      <p class="lead rv">Nous ne nous limitons pas à un arrondissement ni à une station. Ville, littoral, montagne : ce qui change d'un endroit à l'autre, ce sont les règles et la saison — le métier, lui, reste le même.</p>
+    <div class="s-intro" data-animation>
+      <span class="subtitle">Où nous intervenons</span>
+      <h2>Partout où vous avez un bien.</h2>
+      <p class="lead">Nous ne nous limitons pas à un arrondissement ni à une station. Ville, littoral, montagne : ce qui change d'un endroit à l'autre, ce sont les règles et la saison — le métier, lui, reste le même.</p>
     </div>
   </section>
   <div class="sp-sm"></div>
@@ -352,11 +357,11 @@
   <!-- ---- Appel ---- -->
   <div class="sp-lg"></div>
   <section class="wrap">
-    <div class="s-intro center">
-      <span class="subtitle rv">Confier un bien</span>
-      <h2 class="rv">Dites-nous ce que vous avez. Nous vous dirons ce qu'il peut faire.</h2>
-      <p class="lead rv">Un premier échange, un audit chiffré, et vous décidez ensuite. Sans engagement de votre part.</p>
-      <p class="link rv"><a href="contact.html">Nous écrire</a></p>
+    <div class="s-intro center" data-animation>
+      <span class="subtitle">Confier un bien</span>
+      <h2>Dites-nous ce que vous avez. Nous vous dirons ce qu'il peut faire.</h2>
+      <p class="lead">Un premier échange, un audit chiffré, et vous décidez ensuite. Sans engagement de votre part.</p>
+      <p class="link"><a href="contact.html">Nous écrire</a></p>
     </div>
   </section>
 
@@ -364,9 +369,9 @@
   <div class="sp-lg"></div>
   <section id="sesame">
     <div class="wrap">
-      <span class="subtitle rv">De l'autre côté</span>
-      <h2 class="rv">Sesame Stays</h2>
-      <p class="rv">Les biens en location saisonnière que nous gérons y sont réservables directement. C'est la même porte — vue de l'autre côté.</p>
+      <span class="subtitle">De l'autre côté</span>
+      <h2>Sesame Stays</h2>
+      <p>Les biens en location saisonnière que nous gérons y sont réservables directement. C'est la même porte — vue de l'autre côté.</p>
 
       <button class="door-btn" id="doorBtn" aria-label="Franchir la porte vers Sesame Stays">
         <svg viewBox="0 0 126 112" fill="none" aria-hidden="true">

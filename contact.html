@@ -7,7 +7,11 @@
 <meta name="description" content="Contactez Urbaniak pour un audit de votre patrimoine immobilier à Paris.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<!-- Switzer : la police du site de référence, servie depuis le même CDN.
+     Fraunces tient lieu de Canela, qui est sous licence payante. -->
+<link href="https://api.fontshare.com/v2/css?f%5B%5D=switzer@300,400,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@144,300;144,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,30 +20,32 @@
 
 <!-- ===================== EN-TÊTE ===================== -->
 <header id="header">
-  <div class="wrap">
-    <div class="h-side">
-      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-      <a href="expertise.html" class="h-nav d-lg">Notre expertise</a>
-    </div>
+  <div class="bar">
+    <div class="wrap">
+      <div class="h-side">
+        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+        <a href="expertise.html" class="h-nav d-lg">Notre expertise</a>
+      </div>
 
-    <a href="index.html" class="brand" aria-label="Urbaniak — accueil">
-      <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true">
-        <path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/>
-        <path d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/>
-        <path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/>
-        <path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/>
-        <path d="M2 106 H124" stroke="currentColor" stroke-width="6"/>
-      </svg>
-      <span class="lettering">
-        <span class="name">Urbaniak</span>
-        <span class="base">Gestion de patrimoine immobilier</span>
-      </span>
-    </a>
+      <a href="index.html" class="brand" aria-label="Urbaniak — accueil">
+        <!-- Par-dessus la photo : le verrouillage vertical -->
+        <span class="lock lock-stack">
+          <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true"><path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/><path class="mark-gold" d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/><path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/><path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/><path d="M2 106 H124" stroke="currentColor" stroke-width="6"/></svg>
+          <span class="name">Urbaniak</span>
+          <span class="base">Gestion de patrimoine immobilier</span>
+        </span>
+        <!-- Une fois collé : le verrouillage horizontal, plus large -->
+        <span class="lock lock-row">
+          <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true"><path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/><path class="mark-gold" d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/><path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/><path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/><path d="M2 106 H124" stroke="currentColor" stroke-width="6"/></svg>
+          <span class="name">Urbaniak</span>
+        </span>
+      </a>
 
-    <div class="h-side right">
-      <a href="contact.html" class="h-nav">Confier un bien</a>
+      <div class="h-side right">
+        <a href="contact.html" class="h-nav">Confier un bien</a>
+      </div>
     </div>
   </div>
 </header>
@@ -87,8 +93,8 @@
   <div class="sp-md"></div>
   <section class="wrap">
     <div class="row">
-      <div class="col c8">
-        <form class="form rv" action="#" method="post">
+      <div class="col c8" data-animation>
+        <form class="form" action="#" method="post">
           <div class="field"><label for="n">Votre nom</label><input type="text" id="n" name="nom" required></div>
           <div class="field"><label for="e">Votre e-mail</label><input type="email" id="e" name="email" required></div>
           <div class="field"><label for="t">Votre téléphone</label><input type="tel" id="t" name="tel"></div>
@@ -105,12 +111,12 @@
           <button type="submit" class="btn">Envoyer</button>
         </form>
       </div>
-      <div class="col c4">
-        <span class="subtitle rv">Nous joindre</span>
-        <p class="link rv"><a href="tel:+331XXXXXXXX">+33 (0)1 XX XX XX XX</a></p>
-        <p class="link rv"><a href="mailto:contact@urbaniakimmo.com">contact@urbaniakimmo.com</a></p>
-        <h3 class="rv" style="margin-top:40px">Ce qui se passe ensuite</h3>
-        <p class="rv">Nous répondons sous 48 heures. Si le dossier entre dans notre périmètre, nous convenons d'une visite — sans engagement et sans frais.</p>
+      <div class="col c4" data-animation>
+        <span class="subtitle">Nous joindre</span>
+        <p class="link"><a href="tel:+331XXXXXXXX">+33 (0)1 XX XX XX XX</a></p>
+        <p class="link"><a href="mailto:contact@urbaniakimmo.com">contact@urbaniakimmo.com</a></p>
+        <h3 style="margin-top:40px">Ce qui se passe ensuite</h3>
+        <p>Nous répondons sous 48 heures. Si le dossier entre dans notre périmètre, nous convenons d'une visite — sans engagement et sans frais.</p>
       </div>
     </div>
   </section>

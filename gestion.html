@@ -7,7 +7,11 @@
 <meta name="description" content="Gestion locative à Paris : location saisonnière, bail mobilité, longue durée, bureaux. Mise en marché, ménage, maintenance, reporting mensuel.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<!-- Switzer : la police du site de référence, servie depuis le même CDN.
+     Fraunces tient lieu de Canela, qui est sous licence payante. -->
+<link href="https://api.fontshare.com/v2/css?f%5B%5D=switzer@300,400,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@144,300;144,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,30 +20,32 @@
 
 <!-- ===================== EN-TÊTE ===================== -->
 <header id="header">
-  <div class="wrap">
-    <div class="h-side">
-      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-      <a href="expertise.html" class="h-nav d-lg">Notre expertise</a>
-    </div>
+  <div class="bar">
+    <div class="wrap">
+      <div class="h-side">
+        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+        <a href="expertise.html" class="h-nav d-lg">Notre expertise</a>
+      </div>
 
-    <a href="index.html" class="brand" aria-label="Urbaniak — accueil">
-      <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true">
-        <path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/>
-        <path d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/>
-        <path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/>
-        <path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/>
-        <path d="M2 106 H124" stroke="currentColor" stroke-width="6"/>
-      </svg>
-      <span class="lettering">
-        <span class="name">Urbaniak</span>
-        <span class="base">Gestion de patrimoine immobilier</span>
-      </span>
-    </a>
+      <a href="index.html" class="brand" aria-label="Urbaniak — accueil">
+        <!-- Par-dessus la photo : le verrouillage vertical -->
+        <span class="lock lock-stack">
+          <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true"><path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/><path class="mark-gold" d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/><path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/><path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/><path d="M2 106 H124" stroke="currentColor" stroke-width="6"/></svg>
+          <span class="name">Urbaniak</span>
+          <span class="base">Gestion de patrimoine immobilier</span>
+        </span>
+        <!-- Une fois collé : le verrouillage horizontal, plus large -->
+        <span class="lock lock-row">
+          <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true"><path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/><path class="mark-gold" d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/><path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/><path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/><path d="M2 106 H124" stroke="currentColor" stroke-width="6"/></svg>
+          <span class="name">Urbaniak</span>
+        </span>
+      </a>
 
-    <div class="h-side right">
-      <a href="contact.html" class="h-nav">Confier un bien</a>
+      <div class="h-side right">
+        <a href="contact.html" class="h-nav">Confier un bien</a>
+      </div>
     </div>
   </div>
 </header>
@@ -86,37 +92,37 @@
 
   <div class="sp-lg"></div>
   <section class="wrap">
-    <div class="s-intro">
-      <span class="subtitle rv">Les usages</span>
-      <h2 class="rv">Un même bien, quatre manières de le faire travailler.</h2>
+    <div class="s-intro" data-animation>
+      <span class="subtitle">Les usages</span>
+      <h2>Un même bien, quatre manières de le faire travailler.</h2>
     </div>
   </section>
   <div class="sp-lg"></div>
   <section class="wrap s-split">
     <div class="row">
-      <div class="col c8">
-        <div class="picture ratio-wide rv-img"><img src="assets/saisonnier.jpg" alt="Parasols d'un club de plage face à la mer, presqu'île de Saint-Tropez" loading="lazy"></div>
+      <div class="col c8" data-animation>
+        <div class="picture ratio-wide"><img src="assets/saisonnier.jpg" alt="Parasols d'un club de plage face à la mer, presqu'île de Saint-Tropez" loading="lazy"></div>
       </div>
-      <div class="col c4">
-        <span class="subtitle rv">Saisonnier</span>
-        <h3 class="rv">La nuitée, tenue comme un hôtel.</h3>
-        <p class="rv">Tarification dynamique, calendrier synchronisé, ménage entre chaque séjour, linge blanchi, accueil autonome. Vos biens sont diffusés sur les plateformes et sur Sesame Stays, notre propre site de réservation.</p>
-        <p class="rv">C'est le plus rentable, et le plus exigeant. Nous ne le proposons que là où la réglementation le permet.</p>
-        <p class="link rv"><a href="https://apex22-ops.github.io/sesame-stays">Voir Sesame Stays</a></p>
+      <div class="col c4" data-animation>
+        <span class="subtitle">Saisonnier</span>
+        <h3>La nuitée, tenue comme un hôtel.</h3>
+        <p>Tarification dynamique, calendrier synchronisé, ménage entre chaque séjour, linge blanchi, accueil autonome. Vos biens sont diffusés sur les plateformes et sur Sesame Stays, notre propre site de réservation.</p>
+        <p>C'est le plus rentable, et le plus exigeant. Nous ne le proposons que là où la réglementation le permet.</p>
+        <p class="link"><a href="https://apex22-ops.github.io/sesame-stays">Voir Sesame Stays</a></p>
       </div>
     </div>
   </section>
   <div class="sp-lg"></div>
   <section class="wrap s-split reverse">
     <div class="row">
-      <div class="col c8">
-        <div class="picture ratio-wide rv-img"><img src="assets/mobilite.jpg" alt="La pyramide du Louvre et le palais illuminés à la tombée de la nuit" loading="lazy"></div>
+      <div class="col c8" data-animation>
+        <div class="picture ratio-wide"><img src="assets/mobilite.jpg" alt="La pyramide du Louvre et le palais illuminés à la tombée de la nuit" loading="lazy"></div>
       </div>
-      <div class="col c4">
-        <span class="subtitle rv">Bail mobilité</span>
-        <h3 class="rv">De un à dix mois, meublé, sans dépôt de garantie.</h3>
-        <p class="rv">Pour les mutations professionnelles, les stages et les formations. Un excellent compromis entre le rendement du saisonnier et la tranquillité du long terme.</p>
-        <p class="rv">Nous sélectionnons les dossiers, rédigeons le bail et gérons les états des lieux.</p>
+      <div class="col c4" data-animation>
+        <span class="subtitle">Bail mobilité</span>
+        <h3>De un à dix mois, meublé, sans dépôt de garantie.</h3>
+        <p>Pour les mutations professionnelles, les stages et les formations. Un excellent compromis entre le rendement du saisonnier et la tranquillité du long terme.</p>
+        <p>Nous sélectionnons les dossiers, rédigeons le bail et gérons les états des lieux.</p>
         
       </div>
     </div>
@@ -124,13 +130,13 @@
   <div class="sp-lg"></div>
   <section class="wrap s-split">
     <div class="row">
-      <div class="col c8">
-        <div class="picture ratio-wide rv-img"><img src="assets/longue.jpg" alt="Maisons à colombages normandes du centre de Deauville" loading="lazy"></div>
+      <div class="col c8" data-animation>
+        <div class="picture ratio-wide"><img src="assets/longue.jpg" alt="Maisons à colombages normandes du centre de Deauville" loading="lazy"></div>
       </div>
-      <div class="col c4">
-        <span class="subtitle rv">Longue durée</span>
-        <h3 class="rv">Le revenu régulier, sans la charge mentale.</h3>
-        <p class="rv">Sélection du locataire, garanties, quittances, révisions, régularisation des charges, relances. Vous recevez un relevé mensuel et rien d'autre.</p>
+      <div class="col c4" data-animation>
+        <span class="subtitle">Longue durée</span>
+        <h3>Le revenu régulier, sans la charge mentale.</h3>
+        <p>Sélection du locataire, garanties, quittances, révisions, régularisation des charges, relances. Vous recevez un relevé mensuel et rien d'autre.</p>
         
       </div>
     </div>
@@ -138,13 +144,13 @@
   <div class="sp-lg"></div>
   <section class="wrap s-split reverse">
     <div class="row">
-      <div class="col c8">
-        <div class="picture ratio-wide rv-img"><img src="assets/bureaux.jpg" alt="Immeubles de la place du Casino et terrasses plantées, Monte-Carlo" loading="lazy"></div>
+      <div class="col c8" data-animation>
+        <div class="picture ratio-wide"><img src="assets/bureaux.jpg" alt="Immeubles de la place du Casino et terrasses plantées, Monte-Carlo" loading="lazy"></div>
       </div>
-      <div class="col c4">
-        <span class="subtitle rv">Bureaux &amp; commerces</span>
-        <h3 class="rv">Des plateaux qui trouvent preneur.</h3>
-        <p class="rv">Commercialisation, baux professionnels et commerciaux, aménagement, suivi des preneurs et des travaux de raccordement.</p>
+      <div class="col c4" data-animation>
+        <span class="subtitle">Bureaux &amp; commerces</span>
+        <h3>Des plateaux qui trouvent preneur.</h3>
+        <p>Commercialisation, baux professionnels et commerciaux, aménagement, suivi des preneurs et des travaux de raccordement.</p>
         
       </div>
     </div>
@@ -152,22 +158,22 @@
   <div class="sp-lg"></div>
   <section class="wrap">
     <div class="s-list">
-      <div class="s-item rv"><span class="num">01</span><div class="body">
+      <div class="s-item"><span class="num">01</span><div class="body">
         <h3>Mise sur le marché</h3><p>Reportage photo professionnel, rédaction des annonces, diffusion multicanale, tarification suivie semaine par semaine.</p>
       </div></div>
-      <div class="s-item rv"><span class="num">02</span><div class="body">
+      <div class="s-item"><span class="num">02</span><div class="body">
         <h3>Sélection et contrats</h3><p>Étude des dossiers, garanties, rédaction et signature électronique des baux, encaissement des dépôts.</p>
       </div></div>
-      <div class="s-item rv"><span class="num">03</span><div class="body">
+      <div class="s-item"><span class="num">03</span><div class="body">
         <h3>États des lieux</h3><p>Entrée et sortie, photographiés et horodatés, avec chiffrage contradictoire des remises en état.</p>
       </div></div>
-      <div class="s-item rv"><span class="num">04</span><div class="body">
+      <div class="s-item"><span class="num">04</span><div class="body">
         <h3>Ménage et linge</h3><p>Équipes formées au protocole hôtelier, linge blanchi en externe, consommables réassortis.</p>
       </div></div>
-      <div class="s-item rv"><span class="num">05</span><div class="body">
+      <div class="s-item"><span class="num">05</span><div class="body">
         <h3>Maintenance</h3><p>Plombier, électricien, serrurier, chauffagiste : artisans de confiance, interventions tracées, urgences sous 24 h.</p>
       </div></div>
-      <div class="s-item rv"><span class="num">06</span><div class="body">
+      <div class="s-item"><span class="num">06</span><div class="body">
         <h3>Reporting</h3><p>Relevé mensuel : revenus, charges, interventions, taux d'occupation, à jour au 5 du mois.</p>
       </div></div>
     </div>

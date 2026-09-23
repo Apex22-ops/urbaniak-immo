@@ -7,7 +7,11 @@
 <meta name="description" content="Audit de patrimoine immobilier et conseil en arbitrage locatif à Paris : relevé, cadre réglementaire, étude de marché, scénarios chiffrés.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<!-- Switzer : la police du site de référence, servie depuis le même CDN.
+     Fraunces tient lieu de Canela, qui est sous licence payante. -->
+<link href="https://api.fontshare.com/v2/css?f%5B%5D=switzer@300,400,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@144,300;144,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,30 +20,32 @@
 
 <!-- ===================== EN-TÊTE ===================== -->
 <header id="header">
-  <div class="wrap">
-    <div class="h-side">
-      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-      <a href="expertise.html" class="h-nav d-lg">Notre expertise</a>
-    </div>
+  <div class="bar">
+    <div class="wrap">
+      <div class="h-side">
+        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+        <a href="expertise.html" class="h-nav d-lg">Notre expertise</a>
+      </div>
 
-    <a href="index.html" class="brand" aria-label="Urbaniak — accueil">
-      <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true">
-        <path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/>
-        <path d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/>
-        <path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/>
-        <path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/>
-        <path d="M2 106 H124" stroke="currentColor" stroke-width="6"/>
-      </svg>
-      <span class="lettering">
-        <span class="name">Urbaniak</span>
-        <span class="base">Gestion de patrimoine immobilier</span>
-      </span>
-    </a>
+      <a href="index.html" class="brand" aria-label="Urbaniak — accueil">
+        <!-- Par-dessus la photo : le verrouillage vertical -->
+        <span class="lock lock-stack">
+          <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true"><path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/><path class="mark-gold" d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/><path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/><path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/><path d="M2 106 H124" stroke="currentColor" stroke-width="6"/></svg>
+          <span class="name">Urbaniak</span>
+          <span class="base">Gestion de patrimoine immobilier</span>
+        </span>
+        <!-- Une fois collé : le verrouillage horizontal, plus large -->
+        <span class="lock lock-row">
+          <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true"><path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/><path class="mark-gold" d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/><path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/><path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/><path d="M2 106 H124" stroke="currentColor" stroke-width="6"/></svg>
+          <span class="name">Urbaniak</span>
+        </span>
+      </a>
 
-    <div class="h-side right">
-      <a href="contact.html" class="h-nav">Confier un bien</a>
+      <div class="h-side right">
+        <a href="contact.html" class="h-nav">Confier un bien</a>
+      </div>
     </div>
   </div>
 </header>
@@ -87,14 +93,14 @@
   <div class="sp-lg"></div>
   <section class="wrap s-split">
     <div class="row">
-      <div class="col c8">
-        <div class="picture ratio-wide rv-img"><img src="assets/audit.jpg" alt="Immeubles haussmanniens et magnolias en fleur, la tour Eiffel au fond" loading="lazy"></div>
+      <div class="col c8" data-animation>
+        <div class="picture ratio-wide"><img src="assets/audit.jpg" alt="Immeubles haussmanniens et magnolias en fleur, la tour Eiffel au fond" loading="lazy"></div>
       </div>
-      <div class="col c4">
-        <span class="subtitle rv">01 — L'audit</span>
-        <h3 class="rv">Trois visites, un dossier, aucune approximation.</h3>
-        <p class="rv">Nous relevons les surfaces réelles, l'état des lots, les diagnostics en cours de validité, les charges de copropriété et les contraintes de règlement. Nous photographions tout.</p>
-        <p class="rv">En parallèle, nous relevons les loyers et les taux d'occupation constatés dans la rue et les rues adjacentes — pas la moyenne de l'arrondissement, qui ne veut rien dire.</p>
+      <div class="col c4" data-animation>
+        <span class="subtitle">01 — L'audit</span>
+        <h3>Trois visites, un dossier, aucune approximation.</h3>
+        <p>Nous relevons les surfaces réelles, l'état des lots, les diagnostics en cours de validité, les charges de copropriété et les contraintes de règlement. Nous photographions tout.</p>
+        <p>En parallèle, nous relevons les loyers et les taux d'occupation constatés dans la rue et les rues adjacentes — pas la moyenne de l'arrondissement, qui ne veut rien dire.</p>
         
       </div>
     </div>
@@ -102,14 +108,14 @@
   <div class="sp-lg"></div>
   <section class="wrap s-split reverse">
     <div class="row">
-      <div class="col c8">
-        <div class="picture ratio-wide rv-img"><img src="assets/arbitrage.jpg" alt="Le Casino de Monte-Carlo et l'Hôtel de Paris vus d'une terrasse" loading="lazy"></div>
+      <div class="col c8" data-animation>
+        <div class="picture ratio-wide"><img src="assets/arbitrage.jpg" alt="Le Casino de Monte-Carlo et l'Hôtel de Paris vus d'une terrasse" loading="lazy"></div>
       </div>
-      <div class="col c4">
-        <span class="subtitle rv">02 — Le conseil</span>
-        <h3 class="rv">Chaque piste chiffrée, avec ce qu'elle coûte vraiment.</h3>
-        <p class="rv">Saisonnier, bail mobilité, longue durée, bureau, vente : nous posons les scénarios côte à côte, avec le rendement net après charges, fiscalité, gestion et vacance.</p>
-        <p class="rv">Nous vous disons aussi ce que nous déconseillons, et pourquoi. Un immeuble entier en saisonnier n'est pas toujours la bonne réponse.</p>
+      <div class="col c4" data-animation>
+        <span class="subtitle">02 — Le conseil</span>
+        <h3>Chaque piste chiffrée, avec ce qu'elle coûte vraiment.</h3>
+        <p>Saisonnier, bail mobilité, longue durée, bureau, vente : nous posons les scénarios côte à côte, avec le rendement net après charges, fiscalité, gestion et vacance.</p>
+        <p>Nous vous disons aussi ce que nous déconseillons, et pourquoi. Un immeuble entier en saisonnier n'est pas toujours la bonne réponse.</p>
         
       </div>
     </div>
@@ -117,22 +123,22 @@
   <div class="sp-lg"></div>
   <section class="wrap">
     <div class="s-list">
-      <div class="s-item rv"><span class="num">01</span><div class="body">
+      <div class="s-item"><span class="num">01</span><div class="body">
         <h3>Relevé et diagnostics</h3><p>Surfaces Carrez et habitables, état des lieux technique, diagnostics à jour, points de mise en conformité.</p>
       </div></div>
-      <div class="s-item rv"><span class="num">02</span><div class="body">
+      <div class="s-item"><span class="num">02</span><div class="body">
         <h3>Cadre réglementaire</h3><p>Règlement de copropriété, autorisation de changement d'usage, numéro d'enregistrement, règles de la commune.</p>
       </div></div>
-      <div class="s-item rv"><span class="num">03</span><div class="body">
+      <div class="s-item"><span class="num">03</span><div class="body">
         <h3>Étude de marché</h3><p>Loyers et nuitées constatés à l'adresse, saisonnalité, concurrence directe, taux d'occupation réaliste.</p>
       </div></div>
-      <div class="s-item rv"><span class="num">04</span><div class="body">
+      <div class="s-item"><span class="num">04</span><div class="body">
         <h3>Scénarios chiffrés</h3><p>Trois à cinq hypothèses d'exploitation, avec investissement initial, rendement net et délai de retour.</p>
       </div></div>
-      <div class="s-item rv"><span class="num">05</span><div class="body">
+      <div class="s-item"><span class="num">05</span><div class="body">
         <h3>Plan de travaux</h3><p>Ce qu'il faut refaire pour louer au bon prix, chiffré par corps de métier, avec calendrier.</p>
       </div></div>
-      <div class="s-item rv"><span class="num">06</span><div class="body">
+      <div class="s-item"><span class="num">06</span><div class="body">
         <h3>Recommandation</h3><p>Une position claire, argumentée, écrite. C'est vous qui tranchez.</p>
       </div></div>
     </div>
@@ -141,9 +147,9 @@
   <section class="s-band">
     <div class="wrap">
       <div class="row">
-        <div class="col c4"><span class="subtitle rv">La suite</span><h2 class="rv">Une fois l'arbitrage rendu, nous exécutons.</h2></div>
-        <div class="col c8"><p class="lead rv" style="color:rgba(239,237,232,.78)">Mise en marché, gestion locative, ménage, maintenance, travaux : vous restez propriétaire des décisions, nous prenons tout le reste en charge.</p>
-        <p class="link rv" style="margin-top:26px"><a href="gestion.html" style="color:var(--ivory)">La gestion locative</a></p></div>
+        <div class="col c4" data-animation><span class="subtitle">La suite</span><h2>Une fois l'arbitrage rendu, nous exécutons.</h2></div>
+        <div class="col c8" data-animation><p class="lead" style="color:rgba(239,237,232,.78)">Mise en marché, gestion locative, ménage, maintenance, travaux : vous restez propriétaire des décisions, nous prenons tout le reste en charge.</p>
+        <p class="link" style="margin-top:26px"><a href="gestion.html" style="color:var(--ivory)">La gestion locative</a></p></div>
       </div>
     </div>
   </section>

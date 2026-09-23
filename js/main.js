@@ -56,45 +56,49 @@
     });
   }
 
-  /* ---- Héros ----------------------------------------------------------- */
+  /* ---- Héros -----------------------------------------------------------
+     L'image est fixe et reste telle quelle. Seul le titre entre, puis
+     s'efface quand la page glisse par-dessus. */
   var intro = document.getElementById('intro');
   if (intro && window.gsap && !reduce) {
-    var media = document.querySelector('#heroMedia img');
     var arriving = /[?&]from=sesame/.test(window.location.search);
-    // L'image reste strictement immobile : c'est la page qui glisse dessus.
-    // Seule l'ouverture joue un très léger rapprochement, une fois pour toutes.
-    var tl = gsap.timeline({ delay: arriving ? 1.15 : 0, defaults: { ease: 'power4.out' } });
-    if (media) tl.fromTo(media, { scale: 1.08 }, { scale: 1, duration: 2.5 }, 0);
-    tl.to(intro.querySelectorAll('.hero-t'), { y: 0, opacity: 1, duration: 1, stagger: 0.12 }, 1.0)
+    gsap.timeline({ delay: arriving ? 1.15 : 0.15 })
+      .to(intro.querySelectorAll('.hero-t'),
+          { y: 0, opacity: 1, duration: 0.75, ease: 'power2.out', stagger: 0.12 })
       .add(function () {
-        // Le texte du héros s'efface au défilement ; l'image, elle, ne bouge pas.
         ScrollTrigger.create({
-          trigger: intro,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
+          trigger: intro, start: 'top top', end: 'bottom top', scrub: true,
           animation: gsap.timeline()
-            .to(intro.querySelectorAll('.hero-t, .scroll-cue'), { opacity: 0, ease: 'none' }, 0)
+            .to(intro.querySelectorAll('.hero-t'), { opacity: 0, ease: 'none' }, 0)
         });
       });
-  } else if (intro) {
-    gsap.set && gsap.set(intro.querySelectorAll('.hero-t'), { opacity: 1, y: 0 });
+  } else if (intro && window.gsap) {
+    gsap.set(intro.querySelectorAll('.hero-t'), { opacity: 1, y: 0 });
   }
 
-  /* ---- Apparitions au défilement --------------------------------------- */
-  if (window.gsap && !reduce) {
-    gsap.utils.toArray('.rv').forEach(function (el) {
-      gsap.to(el, {
-        opacity: 1, y: 0, duration: 1.1, ease: 'power3.out',
-        scrollTrigger: { trigger: el, start: 'top 88%' }
-      });
+  /* ---- Apparitions au défilement --------------------------------------
+     Même mécanique que passalacqua.it : une simple classe qui bascule et
+     laisse la transition CSS de .75s faire le travail. Les colonnes d'une
+     même rangée sont décalées, comme leur data-animation-delay. */
+  var blocks = Array.prototype.slice.call(document.querySelectorAll('[data-animation]'));
+  if (reduce) {
+    blocks.forEach(function (el) { el.classList.add('a1'); });
+  } else if ('IntersectionObserver' in window) {
+    blocks.forEach(function (el) {
+      var row = el.parentNode;
+      var rank = row ? Array.prototype.indexOf.call(row.children, el) : 0;
+      el.style.transitionDelay = rank > 0 ? (rank * 0.15) + 's' : '';
     });
-    gsap.utils.toArray('.rv-img').forEach(function (el) {
-      gsap.to(el, {
-        clipPath: 'inset(0 0 0% 0)', duration: 1.5, ease: 'power3.out',
-        scrollTrigger: { trigger: el, start: 'top 90%' }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('a1');
+        io.unobserve(e.target);
       });
-    });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
+    blocks.forEach(function (el) { io.observe(el); });
+  } else {
+    blocks.forEach(function (el) { el.classList.add('a1'); });
   }
 
   /* ---- Ancres ---------------------------------------------------------- */

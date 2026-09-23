@@ -5,19 +5,24 @@
    ========================================================================= */
 
 :root{
-  /* Charte Urbaniak */
-  --green:      #2B3B33;   /* Vert profond   Pantone 5535 C */
-  --green-deep: #22302A;   /* fond de baie   */
-  --gold:       #B99B5F;   /* Or mat         Pantone 4525 C */
-  --ink:        #23241F;   /* Encre          Pantone Black 7 C */
-  --ivory:      #EFEDE8;   /* Ivoire         Pantone 9080 C */
-  --warm:       #FBF9F4;   /* Blanc chaud    */
-  --line:       #DFDACD;
-  --muted:      #6E6A5F;
-  --body:       #5F5C53;
+  /* Relevé sur passalacqua.it : fond blanc, titres #343434, courant #666 */
+  --ink:        #343434;   /* titres, sur-titres, liens */
+  --body:       #666666;   /* texte courant */
+  --muted:      #888888;
+  --bg:         #ffffff;
+  --line:       #e3e3e3;
 
-  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
-  --sans:'Jost',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+  /* Charte Urbaniak, conservée pour les accents et la porte */
+  --green:      #2B3B33;
+  --green-deep: #22302A;
+  --gold:       #B99B5F;
+  --ivory:      #EFEDE8;
+  --warm:       #ffffff;
+
+  /* Switzer : la police du site de référence, servie depuis le même CDN.
+     Fraunces remplace Canela, sous licence payante chez Commercial Type. */
+  --serif:'Fraunces','Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Switzer',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
 
   --pad:5.1vw;
   --maxw:1780px;
@@ -34,7 +39,7 @@
 
 html{ -webkit-text-size-adjust:100%; }
 body{
-  margin:0; background:#fff; color:var(--body);
+  margin:0; background:var(--bg); color:var(--body);
   font-family:var(--sans); font-weight:300;
   font-size:16px; line-height:1.5em;
   -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
@@ -47,22 +52,22 @@ h1,h2,h3,h4{ margin:0 0 .5rem; font-weight:400; line-height:1.2; color:var(--ink
 
 h1{
   font-family:var(--serif); font-weight:300;
-  font-size:clamp(50px,4.6vw,70px); line-height:1.1em;
-  margin-bottom:30px; letter-spacing:-.005em;
+  font-variation-settings:'SOFT' 0,'WONK' 0,'opsz' 144;
+  font-size:54px; line-height:1.1em; color:var(--ink); margin-bottom:25px;
 }
 h1 em,h2 em,h3 em{ font-style:italic; }
 
 h2{
   font-family:var(--serif); font-weight:300;
-  font-size:clamp(22px,2.9vw,44px); line-height:1.25em;
-  margin-bottom:25px;
+  font-variation-settings:'SOFT' 0,'WONK' 0,'opsz' 144;
+  font-size:36px; line-height:1.25em; color:var(--ink); margin-bottom:25px;
 }
 @media(max-width:767px){ h2{ line-height:1.45em; margin-bottom:15px; } }
 
 h3{
-  font-family:var(--serif); font-weight:400;
-  font-size:clamp(22px,1.7vw,26px); line-height:1.45em;
-  margin-bottom:20px; text-transform:none;
+  font-family:var(--serif); font-weight:300;
+  font-variation-settings:'SOFT' 0,'WONK' 0,'opsz' 144;
+  font-size:26px; line-height:1.35em; color:var(--ink); margin-bottom:15px;
 }
 
 .subtitle,.link>a,.btn{
@@ -117,33 +122,66 @@ p:last-child{ margin-bottom:0; }
 /* ---- En-tête ----------------------------------------------------------- */
 #header{
   position:absolute; top:0; left:0; right:0; z-index:30; height:var(--header-h);
-  transition:background .6s var(--ease);
 }
-#header .wrap{ height:100%; display:flex; align-items:center; justify-content:space-between; }
-#header.sticky{ position:fixed; background:#fff; box-shadow:0 1px 0 var(--line); }
+/* La barre change de hauteur en .75s — c'est la seule chose qui bouge.
+   Les deux versions du logo se croisent en fondu : aucune rupture. */
+#header .bar{ height:var(--header-h); transition:all .75s; }
+#header .bar .wrap{
+  height:100%; display:flex; align-items:center; justify-content:space-between;
+}
+#header.sticky .bar{ height:80px; }
+#header.sticky .bar .wrap{
+  position:fixed; top:0; left:0; right:0; height:80px; background:#fff;
+}
 .h-side{ flex:1 1 0; display:flex; align-items:center; gap:32px; }
 .h-side.right{ justify-content:flex-end; }
 .h-nav{ font-size:13px; letter-spacing:1px; text-transform:uppercase; color:var(--ink); }
 .h-nav:hover{ color:var(--gold); }
 
-.brand{ display:flex; flex-direction:column; align-items:center; gap:8px; }
-.brand .mark{ width:46px; }
+/* Le logo : un bloc de hauteur fixe qui contient les deux verrouillages,
+   l'un vertical par-dessus la photo, l'autre horizontal une fois collé. */
+.brand{
+  position:relative; flex:0 0 auto;
+  width:230px; height:84px; color:var(--ink);
+}
+.brand .lock{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  transition:opacity .75s ease;
+}
+.brand .lock-stack{ flex-direction:column; gap:9px; opacity:1; }
+.brand .lock-row{ flex-direction:row; gap:16px; opacity:0; pointer-events:none; }
+#header.sticky .brand .lock-stack{ opacity:0; pointer-events:none; }
+#header.sticky .brand .lock-row{ opacity:1; pointer-events:auto; }
+
+.brand .mark{ width:46px; flex:0 0 auto; }
+.brand .lock-row .mark{ width:44px; }
 .brand .name{
   font-size:15px; font-weight:300; letter-spacing:.26em;
-  text-transform:uppercase; color:var(--ink);
+  text-transform:uppercase; color:currentColor; white-space:nowrap;
 }
+.brand .lock-row .name{ font-size:21px; letter-spacing:.28em; }
 .brand .base{
   font-size:9px; letter-spacing:.22em; text-transform:uppercase; color:var(--muted);
+  white-space:nowrap;
 }
-@media(max-width:1023px){ .brand .base{ display:none; } }
+@media(max-width:1023px){
+  .brand{ width:170px; height:74px; }
+  .brand .base{ display:none; }
+  .brand .lock-row .name{ font-size:17px; }
+}
 
 /* En-tête clair par-dessus le héros */
 body.hero-dark #header:not(.sticky) .h-nav,
-body.hero-dark #header:not(.sticky) .brand .name{ color:var(--ivory); }
-body.hero-dark #header:not(.sticky) .brand .base{ color:var(--gold); }
-body.hero-dark #header:not(.sticky) .mark path{ stroke:var(--ivory); }
+body.hero-dark #header:not(.sticky) .brand{ color:#fff; }
+body.hero-dark #header:not(.sticky) .brand .base{ color:rgba(255,255,255,.82); }
+body.hero-dark #header:not(.sticky) .mark path{ stroke:#fff; }
 body.hero-dark #header:not(.sticky) .mark .mark-gold{ stroke:var(--gold); }
-body.hero-dark #header:not(.sticky) .burger span{ background:var(--ivory); }
+body.hero-dark #header:not(.sticky) .burger span{ background:#fff; }
+body.hero-dark #header:not(.sticky) .h-nav,
+body.hero-dark #header:not(.sticky) .brand .name,
+body.hero-dark #header:not(.sticky) .brand .base{ text-shadow:0 1px 22px rgba(0,0,0,.5); }
+body.hero-dark #header:not(.sticky) .mark{ filter:drop-shadow(0 1px 16px rgba(0,0,0,.45)); }
 
 .burger{
   width:34px; height:14px; position:relative; border:0; background:none;
@@ -183,40 +221,25 @@ body.hero-dark #header:not(.sticky) .burger span{ background:var(--ivory); }
 #heroMedia{
   position:fixed; inset:0; z-index:0; overflow:hidden; background:var(--green);
 }
+/* La photo est donnée telle quelle : ni voile, ni dégradé, ni opacité. */
 #heroMedia img{
-  width:100%; height:100%; object-fit:cover; object-position:50% 44%;
-  opacity:.9;
-}
-#heroMedia::after{
-  content:''; position:absolute; inset:0;
-  background:linear-gradient(180deg,
-    rgba(30,42,36,.62) 0%, rgba(34,48,42,.14) 30%,
-    rgba(34,48,42,.55) 62%, rgba(26,36,32,.88) 100%);
+  width:100%; height:100%; object-fit:cover; object-position:50% 20%;
 }
 #intro{
   position:relative; z-index:1; height:100vh; min-height:640px;
   background:transparent;
 }
 /* Tout ce qui suit le héros passe devant l'image et la recouvre. */
-main,#footer{ position:relative; z-index:2; background:var(--warm); }
-#footer{ background:var(--ivory); }
+main,#footer{ position:relative; z-index:2; background:#fff; }
 #intro .inner{
   position:relative; z-index:2; height:100%;
   display:flex; flex-direction:column; justify-content:flex-end;
   padding-bottom:11vh;
 }
-#intro h1{ color:var(--ivory); max-width:20ch; }
-#intro .subtitle{ color:var(--gold); }
+#intro h1{ color:#fff; max-width:20ch; }
+#intro .subtitle{ color:#fff; }
 #intro .hero-t{ opacity:0; transform:translateY(40px); }
 
-.scroll-cue{
-  position:absolute; left:50%; bottom:38px; z-index:2; transform:translateX(-50%);
-  font-size:10px; letter-spacing:.28em; text-transform:uppercase; color:var(--ivory);
-  display:flex; flex-direction:column; align-items:center; gap:12px; opacity:.85;
-}
-.scroll-cue i{ display:block; width:1px; height:44px; background:var(--gold); transform-origin:top;
-  animation:cue 2.6s var(--ease) infinite; }
-@keyframes cue{ 0%{transform:scaleY(0)} 45%{transform:scaleY(1)} 100%{transform:scaleY(1);opacity:0} }
 
 /* ---- Sections ---------------------------------------------------------- */
 .picture{ position:relative; overflow:hidden; }
@@ -252,10 +275,10 @@ main,#footer{ position:relative; z-index:2; background:var(--warm); }
 @media(max-width:767px){ .s-item{ gap:20px; } }
 
 /* Bandeau vert pleine largeur */
-.s-band{ background:var(--green); color:var(--ivory); padding:clamp(80px,11vw,170px) 0; }
-.s-band h2,.s-band h3{ color:var(--ivory); }
-.s-band .subtitle{ color:var(--gold); }
-.s-band .lead{ color:rgba(239,237,232,.78); }
+.s-band{ background:#fff; color:var(--body); padding:clamp(80px,11vw,170px) 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.s-band h2,.s-band h3{ color:var(--ink); }
+.s-band .subtitle{ color:var(--ink); }
+.s-band .lead{ color:var(--body); }
 
 /* Chiffres */
 .stats{ display:flex; flex-wrap:wrap; gap:50px 70px; }
@@ -264,7 +287,7 @@ main,#footer{ position:relative; z-index:2; background:var(--warm); }
   font-family:var(--serif); font-weight:300; font-size:clamp(44px,4vw,62px);
   line-height:1; color:var(--gold); margin-bottom:12px;
 }
-.stat .l{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:rgba(239,237,232,.7); }
+.stat .l{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); }
 
 /* ---- La porte Sésame --------------------------------------------------- */
 #sesame{
@@ -318,13 +341,20 @@ main,#footer{ position:relative; z-index:2; background:var(--warm); }
 }
 
 /* ---- Apparitions au défilement ---------------------------------------- */
-.rv{ opacity:0; transform:translateY(46px); }
-.rv-img{ clip-path:inset(0 0 100% 0); }
+/* Révélation au défilement — valeurs relevées sur passalacqua.it :
+   [data-animation]{opacity:0;transition:all .75s ease;transform:translateY(50px)}
+   [data-animation] picture img{transform:scale(1.1)}  puis retour à 1 */
+[data-animation]{ opacity:0; transform:translateY(50px); transition:all .75s ease; }
+[data-animation] .picture{ overflow:hidden; }
+[data-animation] .picture img{ transform:scale(1.1); transition:all .75s ease; }
+[data-animation].a1{ opacity:1; transform:translateY(0); }
+[data-animation].a1 .picture img{ transform:scale(1); }
+@media(max-width:767px){ [data-animation]{ transform:translateY(15px); } }
 
 @media(prefers-reduced-motion:reduce){
-  .rv,.rv-img,#intro .hero-t{ opacity:1!important; transform:none!important; clip-path:none!important; }
+  [data-animation],#intro .hero-t{ opacity:1!important; transform:none!important; transition:none!important; }
+  [data-animation] .picture img{ transform:none!important; }
   #heroMedia img{ transform:none!important; }
-  .scroll-cue i{ animation:none; }
 }
 
 /* ---- Emplacements photo (en attente des visuels) ---------------------- */
@@ -456,8 +486,6 @@ body.arriving{ overflow:hidden; }
 @media(min-width:900px){ .credits{ columns:2; } }
 
 /* Sur-titre du héros : or éclairci, lisible sur n'importe quelle photo */
-#intro .subtitle{ color:#E3CB9B; }
-#intro h1,#intro .subtitle,.scroll-cue{ text-shadow:0 1px 24px rgba(20,28,24,.5); }
 
 /* =========================================================================
    Ajouts — logo qui se replie, colonnes, nouveaux blocs
@@ -505,26 +533,26 @@ body.arriving{ overflow:hidden; }
 }
 
 /* ---- La machine : tableau de bord -------------------------------------- */
-.s-tech{ background:var(--green-deep); color:var(--ivory); padding:clamp(80px,11vw,170px) 0; }
-.s-tech h2{ color:var(--ivory); }
-.s-tech .subtitle{ color:var(--gold); }
-.s-tech p{ color:rgba(239,237,232,.76); }
+.s-tech{ background:#fff; color:var(--body); padding:clamp(80px,11vw,170px) 0; }
+.s-tech h2{ color:var(--ink); }
+.s-tech .subtitle{ color:var(--ink); }
+.s-tech p{ color:var(--body); }
 .s-tech .col:last-child{ display:flex; align-items:center; }
 
 .dash{
-  width:100%; background:rgba(239,237,232,.04);
-  border:1px solid rgba(185,155,95,.26); border-radius:3px;
+  width:100%; background:#fbfbfa;
+  border:1px solid var(--line); border-radius:2px;
   padding:26px 28px 30px;
 }
 .dash-top{
   display:flex; align-items:center; justify-content:space-between;
-  padding-bottom:20px; border-bottom:1px solid rgba(185,155,95,.2);
+  padding-bottom:20px; border-bottom:1px solid var(--line);
 }
-.dash-title{ font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); }
+.dash-title{ font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink); }
 .dash-live{
   display:inline-flex; align-items:center; gap:8px;
   font-size:11px; letter-spacing:.16em; text-transform:uppercase;
-  color:rgba(239,237,232,.55);
+  color:var(--muted);
 }
 .dash-live i{
   width:6px; height:6px; border-radius:50%; background:#8FBF92;
@@ -534,17 +562,17 @@ body.arriving{ overflow:hidden; }
 
 .dash-kpis{ display:flex; flex-wrap:wrap; gap:26px 46px; padding:26px 0 30px; }
 .kpi{ flex:1 1 150px; display:flex; flex-direction:column; gap:9px; }
-.k-l{ font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:rgba(239,237,232,.55); }
-.k-n{ font-family:var(--serif); font-size:40px; line-height:1; color:var(--ivory); }
+.k-l{ font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); }
+.k-n{ font-family:var(--serif); font-weight:300; font-size:40px; line-height:1; color:var(--ink); }
 .k-n em{ font-style:normal; font-size:15px; color:var(--gold); margin-left:7px; letter-spacing:.06em; }
 
 .dash-chart{
   display:flex; align-items:flex-end; gap:6px; height:96px;
-  padding-bottom:22px; border-bottom:1px solid rgba(185,155,95,.2);
+  padding-bottom:22px; border-bottom:1px solid var(--line);
 }
 .dash-chart span{
   flex:1 1 0; height:var(--h); border-radius:1px;
-  background:linear-gradient(180deg, rgba(185,155,95,.85), rgba(185,155,95,.22));
+  background:linear-gradient(180deg, rgba(52,52,52,.70), rgba(52,52,52,.14));
   transform-origin:bottom; transform:scaleY(0);
   animation:grow 1.1s var(--ease) forwards;
 }
@@ -559,11 +587,11 @@ body.arriving{ overflow:hidden; }
 .dash-log{ list-style:none; margin:0; padding:20px 0 0; }
 .dash-log li{
   display:flex; align-items:center; gap:12px; padding:9px 0;
-  font-size:13px; color:rgba(239,237,232,.66);
+  font-size:13px; color:var(--body);
 }
 .dash-log i{
   flex:0 0 auto; width:5px; height:5px; border-radius:50%;
-  background:var(--gold); opacity:.8;
+  background:var(--gold);
 }
 @media(prefers-reduced-motion:reduce){
   .dash-chart span{ transform:scaleY(1); animation:none; }

@@ -7,7 +7,11 @@
 <meta name="description" content="Comment nous collectons, utilisons et protégeons vos données personnelles, conformément au règlement général sur la protection des données.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<!-- Switzer : la police du site de référence, servie depuis le même CDN.
+     Fraunces tient lieu de Canela, qui est sous licence payante. -->
+<link href="https://api.fontshare.com/v2/css?f%5B%5D=switzer@300,400,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@144,300;144,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,30 +20,32 @@
 
 <!-- ===================== EN-TÊTE ===================== -->
 <header id="header">
-  <div class="wrap">
-    <div class="h-side">
-      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-      <a href="expertise.html" class="h-nav d-lg">Notre expertise</a>
-    </div>
+  <div class="bar">
+    <div class="wrap">
+      <div class="h-side">
+        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+        <a href="expertise.html" class="h-nav d-lg">Notre expertise</a>
+      </div>
 
-    <a href="index.html" class="brand" aria-label="Urbaniak — accueil">
-      <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true">
-        <path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/>
-        <path d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/>
-        <path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/>
-        <path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/>
-        <path d="M2 106 H124" stroke="currentColor" stroke-width="6"/>
-      </svg>
-      <span class="lettering">
-        <span class="name">Urbaniak</span>
-        <span class="base">Gestion de patrimoine immobilier</span>
-      </span>
-    </a>
+      <a href="index.html" class="brand" aria-label="Urbaniak — accueil">
+        <!-- Par-dessus la photo : le verrouillage vertical -->
+        <span class="lock lock-stack">
+          <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true"><path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/><path class="mark-gold" d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/><path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/><path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/><path d="M2 106 H124" stroke="currentColor" stroke-width="6"/></svg>
+          <span class="name">Urbaniak</span>
+          <span class="base">Gestion de patrimoine immobilier</span>
+        </span>
+        <!-- Une fois collé : le verrouillage horizontal, plus large -->
+        <span class="lock lock-row">
+          <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true"><path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/><path class="mark-gold" d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/><path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/><path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/><path d="M2 106 H124" stroke="currentColor" stroke-width="6"/></svg>
+          <span class="name">Urbaniak</span>
+        </span>
+      </a>
 
-    <div class="h-side right">
-      <a href="contact.html" class="h-nav">Confier un bien</a>
+      <div class="h-side right">
+        <a href="contact.html" class="h-nav">Confier un bien</a>
+      </div>
     </div>
   </div>
 </header>
@@ -85,7 +91,7 @@
   </section>
 
   <div class="sp-md"></div>
-  <section class="wrap"><div class="prose rv">
+  <section class="wrap"><div class="prose">
 <p class="meta-legal">Ce texte est rédigé et prêt à publier. Les mentions surlignées attendent vos informations exactes — elles sont obligatoires et doivent être renseignées avant la mise en ligne.</p>
 <h3>1. Responsable du traitement</h3>
 <p>Le responsable du traitement des données collectées sur urbaniakimmo.com est
