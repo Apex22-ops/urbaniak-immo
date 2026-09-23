@@ -31,7 +31,7 @@
   /* ---- Panneau de navigation ------------------------------------------ */
   var burger = document.getElementById('burger');
   var panel  = document.getElementById('panel');
-  var pushed = '#intro, main, #footer';
+  var pushed = '#heroMedia, #intro, main, #footer';
 
   if (burger && panel) {
     burger.addEventListener('click', function () {
@@ -59,21 +59,21 @@
   /* ---- Héros ----------------------------------------------------------- */
   var intro = document.getElementById('intro');
   if (intro && window.gsap && !reduce) {
-    var media = intro.querySelector('.media > *');
+    var media = document.querySelector('#heroMedia img');
     var arriving = /[?&]from=sesame/.test(window.location.search);
-    // La parallaxe n'est armée qu'une fois l'entrée jouée : sinon le scrub
-    // capte l'opacité 0 initiale du texte et la reverrouille à 0.
-    gsap.timeline({ delay: arriving ? 1.15 : 0, defaults: { ease: 'power4.out' } })
-      .to(media, { scale: 1, duration: 2.5 })
-      .to(intro.querySelectorAll('.hero-t'), { y: 0, opacity: 1, duration: 1, stagger: 0.12 }, '-=1.5')
+    // L'image reste strictement immobile : c'est la page qui glisse dessus.
+    // Seule l'ouverture joue un très léger rapprochement, une fois pour toutes.
+    var tl = gsap.timeline({ delay: arriving ? 1.15 : 0, defaults: { ease: 'power4.out' } });
+    if (media) tl.fromTo(media, { scale: 1.08 }, { scale: 1, duration: 2.5 }, 0);
+    tl.to(intro.querySelectorAll('.hero-t'), { y: 0, opacity: 1, duration: 1, stagger: 0.12 }, 1.0)
       .add(function () {
+        // Le texte du héros s'efface au défilement ; l'image, elle, ne bouge pas.
         ScrollTrigger.create({
           trigger: intro,
           start: 'top top',
           end: 'bottom top',
           scrub: true,
           animation: gsap.timeline()
-            .to(media, { scale: 1.1, ease: 'none' }, 0)
             .to(intro.querySelectorAll('.hero-t, .scroll-cue'), { opacity: 0, ease: 'none' }, 0)
         });
       });

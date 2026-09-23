@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Urbaniak — Gestion de patrimoine immobilier</title>
-<meta name="description" content="Audit, conseil et gestion locative de patrimoine immobilier à Paris. Location saisonnière, bail mobilité, longue durée, bureaux. Urbaniak accompagne les propriétaires de l'audit à la commercialisation.">
+<meta name="description" content="Nous gérons des portefeuilles immobiliers de sociétés et de particuliers : location saisonnière, bail mobilité, longue durée, bureaux et commerces. Un interlocuteur unique, des automatisations qui tiennent la cadence, des tableaux de bord lisibles.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -28,17 +28,19 @@
     <a href="index.html" class="brand" aria-label="Urbaniak — accueil">
       <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true">
         <path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/>
-        <path d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/>
+        <path class="mark-gold" d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/>
         <path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/>
         <path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/>
         <path d="M2 106 H124" stroke="currentColor" stroke-width="6"/>
       </svg>
-      <span class="name">Urbaniak</span>
-      <span class="base">Gestion de patrimoine immobilier</span>
+      <span class="lettering">
+        <span class="name">Urbaniak</span>
+        <span class="base">Gestion de patrimoine immobilier</span>
+      </span>
     </a>
 
     <div class="h-side right">
-      <a href="contact.html" class="h-nav">Nous écrire</a>
+      <a href="contact.html" class="h-nav">Confier un bien</a>
     </div>
   </div>
 </header>
@@ -52,7 +54,7 @@
         <li><a href="expertise.html">Notre expertise</a></li>
         <li><a href="expertise.html#audit">L'audit</a></li>
         <li><a href="gestion.html">La gestion</a></li>
-        <li><a href="contact.html">Nous écrire</a></li>
+        <li><a href="contact.html">Confier un bien</a></li>
       </ul>
     </div>
     <div class="panel-col">
@@ -69,20 +71,23 @@
       <ul class="panel-list">
         <li><a href="https://apex22-ops.github.io/sesame-stays" data-door>Sesame Stays</a></li>
       </ul>
-      <p style="margin-top:22px;color:rgba(239,237,232,.6);font-size:13px;max-width:30ch">
+      <p class="panel-note">
         Le catalogue des locations saisonnières que nous gérons.
       </p>
     </div>
   </div>
 </nav>
 
+<!-- ===================== L'IMAGE FIXE =====================
+     Elle ne bouge jamais. C'est la page qui glisse par-dessus. -->
+<div id="heroMedia" aria-hidden="true">
+  <img src="assets/hero.jpg" alt="" fetchpriority="high">
+</div>
+
 <!-- ===================== HÉROS ===================== -->
 <section id="intro">
-  <div class="media">
-    <img src="assets/hero.jpg" alt="Passage voûté de la place des Vosges, Paris" fetchpriority="high">
-  </div>
   <div class="inner wrap">
-    <span class="subtitle hero-t">Paris · Saint-Tropez · Monaco · Deauville</span>
+    <span class="subtitle hero-t">Gestion de patrimoine immobilier</span>
     <h1 class="hero-t">Chaque bien a une porte.<br>Encore faut-il savoir <em>laquelle ouvrir</em>.</h1>
   </div>
   <span class="scroll-cue"><i></i>Découvrir</span>
@@ -95,8 +100,68 @@
   <section class="wrap">
     <div class="s-intro">
       <span class="subtitle rv">Ce que nous faisons</span>
-      <h2 class="rv">Nous prenons en charge le patrimoine immobilier de nos clients, de l'audit initial jusqu'à la remise des clés — et tout ce qui vit entre les deux.</h2>
-      <p class="lead rv">Quelques appartements en location saisonnière, un immeuble entier, des bureaux à relouer, un bien à vendre : nous regardons d'abord ce que vous avez, puis nous disons honnêtement ce qu'il peut devenir.</p>
+      <h2 class="rv">Nous prenons en charge des portefeuilles immobiliers entiers — de sociétés comme de particuliers — et nous les faisons travailler.</h2>
+      <p class="lead rv">Un appartement isolé, une dizaine de lots, un immeuble complet, des bureaux à relouer. Nous regardons d'abord ce que vous avez, nous disons honnêtement ce qu'il peut devenir, puis nous l'exploitons de bout en bout. Vous gardez la propriété et les décisions. Nous prenons tout le reste.</p>
+    </div>
+  </section>
+
+  <!-- ---- Le nom sur la porte ---- -->
+  <div class="sp-lg"></div>
+  <section class="wrap s-split">
+    <div class="row">
+      <div class="col c5">
+        <div class="picture ratio-tall rv-img">
+          <img src="assets/signature.jpg" alt="Porte voûtée en pierre dans une ruelle de village provençal" loading="lazy">
+        </div>
+      </div>
+      <div class="col c7">
+        <span class="subtitle rv">La maison</span>
+        <h2 class="rv">J'ai mis mon nom de famille sur la porte.</h2>
+        <p class="rv">Urbaniak n'est pas une enseigne rachetée à un réseau. C'est mon nom, celui que portent mes parents et que porteront mes enfants. Quand il figure sur un mandat, il engage plus qu'une signature.</p>
+        <p class="rv">C'est pour cette raison qu'aucun bien confié n'est traité comme une ligne dans un tableau. Je connais chaque adresse, chaque locataire difficile, chaque chaudière capricieuse. Je m'occupe de vos biens comme des miens — parce que c'est exactement le même geste.</p>
+        <p class="signature rv">Dominika Urbaniak</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Les usages ---- -->
+  <div class="sp-lg"></div>
+  <section class="wrap">
+    <div class="s-intro">
+      <span class="subtitle rv">Tous les usages</span>
+      <h2 class="rv">Un même bien peut rapporter très différemment selon la manière dont on le loue.</h2>
+      <p class="lead rv">Nous ne poussons pas un format : nous chiffrons les quatre, et nous retenons celui qui sert votre situation — fiscalité, horizon de revente, envie d'y revenir un été.</p>
+    </div>
+    <div class="sp-sm"></div>
+    <div class="row usages">
+      <div class="col c3">
+        <div class="picture ratio-sq rv-img"><img src="assets/saisonnier.jpg" alt="Parasols d'un club de plage face à la mer, presqu'île de Saint-Tropez" loading="lazy"></div>
+        <div class="u-body">
+          <h3 class="rv">Location saisonnière</h3>
+          <p class="rv">Loué à la nuitée, géré de bout en bout, tarifé au jour le jour et référencé sur Sesame Stays.</p>
+        </div>
+      </div>
+      <div class="col c3">
+        <div class="picture ratio-sq rv-img"><img src="assets/mobilite.jpg" alt="La pyramide du Louvre et le palais illuminés à la tombée de la nuit" loading="lazy"></div>
+        <div class="u-body">
+          <h3 class="rv">Bail mobilité</h3>
+          <p class="rv">Un à dix mois, meublé, sans dépôt de garantie. Le format des missions, des mutations et des études.</p>
+        </div>
+      </div>
+      <div class="col c3">
+        <div class="picture ratio-sq rv-img"><img src="assets/longue.jpg" alt="Maisons à colombages normandes du centre de Deauville" loading="lazy"></div>
+        <div class="u-body">
+          <h3 class="rv">Habitation longue durée</h3>
+          <p class="rv">Vide ou meublé, bail classique. Sélection du dossier, garanties, quittances et révisions annuelles.</p>
+        </div>
+      </div>
+      <div class="col c3">
+        <div class="picture ratio-sq rv-img"><img src="assets/bureaux.jpg" alt="Immeubles de la place du Casino et terrasses plantées, Monte-Carlo" loading="lazy"></div>
+        <div class="u-body">
+          <h3 class="rv">Bureaux &amp; commerces</h3>
+          <p class="rv">Baux professionnels et commerciaux, aménagement des plateaux, suivi des preneurs et des charges.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -106,7 +171,7 @@
     <div class="row">
       <div class="col c8">
         <div class="picture ratio-wide rv-img">
-          <img src="assets/audit.jpg" alt="Façade haussmannienne, Paris" loading="lazy">
+          <img src="assets/audit.jpg" alt="Immeubles haussmanniens et magnolias en fleur, la tour Eiffel au fond" loading="lazy">
         </div>
       </div>
       <div class="col c4">
@@ -124,7 +189,7 @@
     <div class="row">
       <div class="col c6">
         <div class="picture ratio-tall rv-img">
-          <img src="assets/arbitrage.jpg" alt="Pavillon de la place des Vosges, Paris" loading="lazy">
+          <img src="assets/arbitrage.jpg" alt="Le Casino de Monte-Carlo et l'Hôtel de Paris vus d'une terrasse" loading="lazy">
         </div>
         <div style="padding-top:26px">
           <h3 class="rv">L'arbitrage</h3>
@@ -133,11 +198,52 @@
       </div>
       <div class="col c6">
         <div class="picture ratio-tall rv-img">
-          <img src="assets/scene.jpg" alt="Coin salon, fauteuil et bouquet" loading="lazy">
+          <img src="assets/scene.jpg" alt="Jeu de backgammon ouvert sur un transat, plage de Pampelonne" loading="lazy">
         </div>
         <div style="padding-top:26px">
           <h3 class="rv">La mise en scène</h3>
-          <p class="rv">Design, mobilier, petits travaux, reportage photo : un bien se loue d'abord sur ce qu'il donne à voir.</p>
+          <p class="rv">Design, mobilier, petits travaux, reportage photo : un bien se loue d'abord sur ce qu'il donne à voir, puis se garde sur ce qu'il fait vivre.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- La technologie ---- -->
+  <div class="sp-lg"></div>
+  <section class="s-tech">
+    <div class="wrap">
+      <div class="row">
+        <div class="col c5">
+          <span class="subtitle rv">02 — La machine</span>
+          <h2 class="rv">Une gestion à l'ancienne ne tient plus la cadence. La nôtre est automatisée.</h2>
+          <p class="rv">Les messages aux locataires, les codes d'accès, les plannings de ménage, les relances d'impayés, les rapprochements bancaires : tout ce qui est répétitif est confié à des automatisations pilotées par intelligence artificielle. Elles ne dorment pas, n'oublient rien et ne partent pas en vacances au mois d'août.</p>
+          <p class="rv">Ce que la machine libère, nous le rendons en attention humaine : les arbitrages, les visites, les négociations, les urgences du dimanche soir.</p>
+        </div>
+        <div class="col c7">
+          <!-- Illustration du tableau de bord propriétaire (valeurs d'exemple) -->
+          <div class="dash rv-img" role="img" aria-label="Aperçu du tableau de bord propriétaire : taux d'occupation, revenus encaissés, interventions et journal des automatisations">
+            <div class="dash-top">
+              <span class="dash-title">Tableau de bord — portefeuille</span>
+              <span class="dash-live"><i></i>en direct</span>
+            </div>
+            <div class="dash-kpis">
+              <div class="kpi"><span class="k-l">Taux d'occupation</span><span class="k-n">87<em>%</em></span></div>
+              <div class="kpi"><span class="k-l">Encaissé ce mois</span><span class="k-n">24 180<em>€</em></span></div>
+              <div class="kpi"><span class="k-l">Interventions</span><span class="k-n">6<em>en cours</em></span></div>
+            </div>
+            <div class="dash-chart" aria-hidden="true">
+              <span style="--h:38%"></span><span style="--h:52%"></span><span style="--h:46%"></span>
+              <span style="--h:64%"></span><span style="--h:78%"></span><span style="--h:71%"></span>
+              <span style="--h:92%"></span><span style="--h:85%"></span><span style="--h:60%"></span>
+              <span style="--h:48%"></span><span style="--h:55%"></span><span style="--h:69%"></span>
+            </div>
+            <ul class="dash-log">
+              <li><i></i>Ménage planifié — départ 11 h, arrivée 16 h</li>
+              <li><i></i>Code d'accès envoyé au locataire</li>
+              <li><i></i>Loyer rapproché, quittance émise</li>
+              <li><i></i>Relance automatique — devis plomberie</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -149,11 +255,11 @@
     <div class="row">
       <div class="col c8">
         <div class="picture ratio-wide rv-img">
-          <img src="assets/gestion.jpg" alt="Porte cochère monumentale, Paris" loading="lazy">
+          <img src="assets/gestion.jpg" alt="Ruelle fleurie de lauriers blancs dans un village de la presqu'île de Saint-Tropez" loading="lazy">
         </div>
       </div>
       <div class="col c4">
-        <span class="subtitle rv">02 — La gestion</span>
+        <span class="subtitle rv">03 — La gestion</span>
         <h2 class="rv">Vous ne recevez plus qu'un relevé.</h2>
         <p class="rv">Mise sur le marché, sélection des locataires, états des lieux, ménage, maintenance, urgences du dimanche soir : nous tenons la ligne. Vous gardez la décision, nous prenons l'exécution.</p>
         <p class="link rv"><a href="gestion.html">La gestion locative</a></p>
@@ -211,90 +317,46 @@
         </div>
         <div class="col c8">
           <div class="stats">
-            <div class="stat rv"><div class="n">Paris</div><div class="l">et proche couronne</div></div>
-            <div class="stat rv"><div class="n">24 h</div><div class="l">délai de réponse aux urgences</div></div>
-            <div class="stat rv"><div class="n">1</div><div class="l">interlocuteur par propriétaire</div></div>
+            <div class="stat rv"><div class="n">1</div><div class="l">interlocuteur par propriétaire, du mandat à la revente</div></div>
+            <div class="stat rv"><div class="n">24 h</div><div class="l">délai de réponse aux urgences, week-ends compris</div></div>
+            <div class="stat rv"><div class="n">100 %</div><div class="l">des mouvements visibles sur votre tableau de bord</div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ---- Les destinations ---- -->
+  <!-- ---- Partout ---- -->
   <div class="sp-lg"></div>
   <section class="wrap">
     <div class="s-intro">
       <span class="subtitle rv">Où nous intervenons</span>
-      <h2 class="rv">Quatre marchés que nous connaissons rue par rue.</h2>
-      <p class="lead rv">Paris toute l'année, la Côte et la Normandie au rythme des saisons. Chaque marché a ses règles, ses pics et ses pièges — nous ne conseillons que là où nous savons vraiment.</p>
-    </div>
-    <div class="sp-sm"></div>
-    <div class="row">
-      <div class="col c6">
-        <div class="picture ratio-wide rv-img"><img src="assets/paris.jpg" alt="Toits de Paris" loading="lazy"></div>
-        <div style="padding-top:22px">
-          <h3 class="rv">Paris</h3>
-          <p class="rv">Appartements, immeubles de rapport et bureaux. Le marché le plus réglementé de France : changement d'usage, numéro d'enregistrement, plafonnement des loyers. C'est là que l'audit compte le plus.</p>
-        </div>
-      </div>
-      <div class="col c6">
-        <div class="picture ratio-wide rv-img"><img src="assets/tropez.jpg" alt="Le port de Saint-Tropez" loading="lazy"></div>
-        <div style="padding-top:22px">
-          <h3 class="rv">Saint-Tropez</h3>
-          <p class="rv">Villas, mas et pied-à-terre dans le Golfe. Une saison courte et très dense : la tarification à la semaine et la qualité de l'accueil font toute la différence de rendement.</p>
-        </div>
-      </div>
-    </div>
-    <div class="sp-sm"></div>
-    <div class="row">
-      <div class="col c6">
-        <div class="picture ratio-wide rv-img"><img src="assets/monaco.jpg" alt="Le Rocher de Monaco" loading="lazy"></div>
-        <div style="padding-top:22px">
-          <h3 class="rv">Monaco</h3>
-          <p class="rv">Appartements et penthouses en Principauté. Un régime juridique propre, une clientèle internationale et des séjours longs — l'inverse exact de la logique parisienne.</p>
-        </div>
-      </div>
-      <div class="col c6">
-        <div class="picture ratio-wide rv-img"><img src="assets/deauville.jpg" alt="Parasols sur la plage de Deauville" loading="lazy"></div>
-        <div style="padding-top:22px">
-          <h3 class="rv">Deauville</h3>
-          <p class="rv">Villas anglo-normandes et appartements face aux Planches. Week-ends, ponts et vacances scolaires : un calendrier qui se pilote à la nuitée, pas au mois.</p>
-        </div>
-      </div>
+      <h2 class="rv">Partout où vous avez un bien.</h2>
+      <p class="lead rv">Nous ne nous limitons pas à un arrondissement ni à une station. Ville, littoral, montagne : ce qui change d'un endroit à l'autre, ce sont les règles et la saison — le métier, lui, reste le même.</p>
     </div>
   </section>
+  <div class="sp-sm"></div>
+  <div class="strip" aria-label="Quelques lieux où nous gérons des biens">
+    <div class="strip-rail">
+      <figure><img src="assets/lieu-paris.jpg" alt="Terrasse de café pavée au pied du Sacré-Cœur, Montmartre" loading="lazy"><figcaption>Paris</figcaption></figure>
+      <figure><img src="assets/lieu-tropez.jpg" alt="Le port et la vieille ville de Saint-Tropez vus du ciel" loading="lazy"><figcaption>Saint-Tropez</figcaption></figure>
+      <figure><img src="assets/lieu-monaco.jpg" alt="Le Casino de Monte-Carlo et l'Hôtel de Paris" loading="lazy"><figcaption>Monaco</figcaption></figure>
+      <figure><img src="assets/lieu-courchevel.jpg" alt="Courchevel illuminé au crépuscule sous les sommets enneigés" loading="lazy"><figcaption>Courchevel</figcaption></figure>
+      <figure><img src="assets/lieu-laplagne.jpg" alt="Les villages de La Plagne sous la neige en plein soleil" loading="lazy"><figcaption>La Plagne</figcaption></figure>
+      <figure><img src="assets/lieu-deauville.jpg" alt="Parasols colorés et cabines de bain sur la plage de Deauville" loading="lazy"><figcaption>Deauville</figcaption></figure>
+      <figure><img src="assets/lieu-honfleur.jpg" alt="Les façades étroites du Vieux Bassin de Honfleur" loading="lazy"><figcaption>Honfleur</figcaption></figure>
+      <figure><img src="assets/lieu-marseille.jpg" alt="Le Vieux-Port de Marseille et Notre-Dame de la Garde" loading="lazy"><figcaption>Marseille</figcaption></figure>
+    </div>
+  </div>
 
-  <!-- ---- Typologies ---- -->
+  <!-- ---- Appel ---- -->
   <div class="sp-lg"></div>
   <section class="wrap">
-    <div class="s-intro">
-      <span class="subtitle rv">Les biens que nous gérons</span>
-      <h2 class="rv">Du studio saisonnier à l'immeuble entier.</h2>
-    </div>
-    <div class="sp-sm"></div>
-    <div class="row">
-      <div class="col c4">
-        <div class="picture ratio-sq rv-img"><img src="assets/saisonnier.jpg" alt="Séjour d'un appartement meublé" loading="lazy"></div>
-        <div style="padding-top:22px">
-          <h3 class="rv">Location saisonnière</h3>
-          <p class="rv">Appartements meublés loués à la nuitée, gérés de bout en bout et référencés sur Sesame Stays.</p>
-        </div>
-      </div>
-      <div class="col c4">
-        <div class="picture ratio-sq rv-img"><img src="assets/longue.jpg" alt="Arcades de la place des Vosges, Paris" loading="lazy"></div>
-        <div style="padding-top:22px">
-          <h3 class="rv">Immeubles complets</h3>
-          <p class="rv">Saisonnier ou longue durée, avec optimisation lot par lot et pilotage des parties communes.</p>
-        </div>
-      </div>
-      <div class="col c4">
-        <div class="picture ratio-sq rv-img"><img src="assets/bureaux.jpg" alt="Passage couvert, Paris" loading="lazy"></div>
-        <div style="padding-top:22px">
-          <h3 class="rv">Bureaux &amp; commerces</h3>
-          <p class="rv">Commercialisation, baux professionnels, aménagement des plateaux et suivi des preneurs.</p>
-        </div>
-      </div>
+    <div class="s-intro center">
+      <span class="subtitle rv">Confier un bien</span>
+      <h2 class="rv">Dites-nous ce que vous avez. Nous vous dirons ce qu'il peut faire.</h2>
+      <p class="lead rv">Un premier échange, un audit chiffré, et vous décidez ensuite. Sans engagement de votre part.</p>
+      <p class="link rv"><a href="contact.html">Nous écrire</a></p>
     </div>
   </section>
 
@@ -362,20 +424,23 @@
     <div class="f-grid">
       <div class="f-col">
         <span class="subtitle">Urbaniak</span>
-        <p style="font-size:14px">Gestion de patrimoine immobilier<br>Paris</p>
+        <p style="font-size:14px">Gestion de patrimoine immobilier<br>Partout où vous avez un bien</p>
       </div>
       <div class="f-col">
         <span class="subtitle">Navigation</span>
         <ul>
           <li><a href="expertise.html">Notre expertise</a></li>
           <li><a href="gestion.html">La gestion</a></li>
-          <li><a href="contact.html">Nous écrire</a></li>
+          <li><a href="contact.html">Confier un bien</a></li>
         </ul>
       </div>
       <div class="f-col">
-        <span class="subtitle">De l'autre côté</span>
+        <span class="subtitle">Les usages</span>
         <ul>
-          <li><a href="https://apex22-ops.github.io/sesame-stays" data-door>Sesame Stays</a></li>
+          <li><a href="gestion.html#saisonnier">Location saisonnière</a></li>
+          <li><a href="gestion.html#mobilite">Bail mobilité</a></li>
+          <li><a href="gestion.html#longue">Longue durée</a></li>
+          <li><a href="gestion.html#bureaux">Bureaux &amp; commerces</a></li>
         </ul>
       </div>
       <div class="f-col">
@@ -383,6 +448,7 @@
         <ul>
           <li><a href="tel:+331XXXXXXXX">+33 (0)1 XX XX XX XX</a></li>
           <li><a href="mailto:contact@urbaniakimmo.com">contact@urbaniakimmo.com</a></li>
+          <li><a href="https://apex22-ops.github.io/sesame-stays" data-door>Sesame Stays</a></li>
         </ul>
       </div>
     </div>
