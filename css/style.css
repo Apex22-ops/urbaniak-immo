@@ -896,3 +896,22 @@ body.hero-dark #header:not(.sticky) .mark{ filter:drop-shadow(0 1px 14px rgba(18
   .fd-lg,.fd-sm{ clip-path:polygon(10px 0,calc(100% - 10px) 0,100% 10px,100% calc(100% - 10px),
                     calc(100% - 10px) 100%,10px 100%,0 calc(100% - 10px),0 10px); }
 }
+
+/* ---- Bloc 2 : la déclaration, alignée à droite sur les trois quarts ---- */
+/* La largeur se calcule sur l'écran, pas sur la colonne de contenu :
+   le bloc part du quart gauche de l'écran et va jusqu'au bord du texte. */
+.statement-r{
+  width:calc(75vw - var(--pad)); max-width:100%;
+  margin-left:auto; text-align:right;
+}
+.statement-r p{
+  font-family:var(--serif); font-weight:300;
+  font-size:clamp(42px,4vw,64px); line-height:1.08;
+  letter-spacing:-0.02em; color:var(--ink);
+  margin:0 0 .58em;
+}
+.statement-r p:last-child{ margin-bottom:0; }
+@media(max-width:1023px){
+  .statement-r{ width:100%; text-align:left; }
+  .statement-r p{ font-size:clamp(30px,5.2vw,40px); margin-bottom:.62em; }
+}
