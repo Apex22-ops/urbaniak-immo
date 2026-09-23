@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La gestion locative — Urbaniak</title>
+<meta name="description" content="Gestion locative à Paris : location saisonnière, bail mobilité, longue durée, bureaux. Mise en marché, ménage, maintenance, reporting mensuel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="arrival" aria-hidden="true"></div>
+
+<!-- ===================== EN-TÊTE ===================== -->
+<header id="header">
+  <div class="wrap">
+    <div class="h-side">
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <a href="expertise.html" class="h-nav d-lg">Notre expertise</a>
+    </div>
+
+    <a href="index.html" class="brand" aria-label="Urbaniak — accueil">
+      <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true">
+        <path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/>
+        <path d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/>
+        <path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/>
+        <path d="M2 106 H124" stroke="currentColor" stroke-width="6"/>
+      </svg>
+      <span class="name">Urbaniak</span>
+      <span class="base">Gestion de patrimoine immobilier</span>
+    </a>
+
+    <div class="h-side right">
+      <a href="contact.html" class="h-nav">Nous écrire</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== PANNEAU DE NAVIGATION ===================== -->
+<nav id="panel" aria-label="Navigation principale">
+  <div class="panel-grid">
+    <div class="panel-col">
+      <span class="subtitle">La maison</span>
+      <ul class="panel-list">
+        <li><a href="expertise.html">Notre expertise</a></li>
+        <li><a href="expertise.html#audit">L'audit</a></li>
+        <li><a href="gestion.html">La gestion</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div class="panel-col">
+      <span class="subtitle">Les usages</span>
+      <ul class="panel-list">
+        <li><a href="gestion.html#saisonnier">Location saisonnière</a></li>
+        <li><a href="gestion.html#mobilite">Bail mobilité</a></li>
+        <li><a href="gestion.html#longue">Longue durée</a></li>
+        <li><a href="gestion.html#bureaux">Bureaux &amp; commerces</a></li>
+      </ul>
+    </div>
+    <div class="panel-col">
+      <span class="subtitle">De l'autre côté</span>
+      <ul class="panel-list">
+        <li><a href="https://apex22-ops.github.io/sesame-stays" data-door>Sesame Stays</a></li>
+      </ul>
+      <p style="margin-top:22px;color:rgba(239,237,232,.6);font-size:13px;max-width:30ch">
+        Le catalogue des locations saisonnières que nous gérons.
+      </p>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="page-head wrap">
+    <span class="subtitle">La gestion</span>
+    <h1>Vous ne recevez plus qu'un relevé.</h1>
+    <p class="lead">Une fois l'usage arbitré, nous prenons l'exécution en charge de bout en bout — et vous gardez la main sur chaque décision qui compte.</p>
+  </section>
+
+  <div class="sp-lg"></div>
+  <section class="wrap">
+    <div class="s-intro">
+      <span class="subtitle rv">Les usages</span>
+      <h2 class="rv">Un même bien, quatre manières de le faire travailler.</h2>
+    </div>
+  </section>
+  <div class="sp-lg"></div>
+  <section class="wrap s-split">
+    <div class="row">
+      <div class="col c8">
+        <div class="picture ratio-wide rv-img"><img src="assets/saisonnier.jpg" alt="Séjour d'un appartement meublé" loading="lazy"></div>
+      </div>
+      <div class="col c4">
+        <span class="subtitle rv">Saisonnier</span>
+        <h3 class="rv">La nuitée, tenue comme un hôtel.</h3>
+        <p class="rv">Tarification dynamique, calendrier synchronisé, ménage entre chaque séjour, linge blanchi, accueil autonome. Vos biens sont diffusés sur les plateformes et sur Sesame Stays, notre propre site de réservation.</p>
+        <p class="rv">C'est le plus rentable, et le plus exigeant. Nous ne le proposons que là où la réglementation le permet.</p>
+        <p class="link rv"><a href="https://apex22-ops.github.io/sesame-stays">Voir Sesame Stays</a></p>
+      </div>
+    </div>
+  </section>
+  <div class="sp-lg"></div>
+  <section class="wrap s-split reverse">
+    <div class="row">
+      <div class="col c8">
+        <div class="picture ratio-wide rv-img"><img src="assets/mobilite.jpg" alt="Rue pavée du Marais, Paris" loading="lazy"></div>
+      </div>
+      <div class="col c4">
+        <span class="subtitle rv">Bail mobilité</span>
+        <h3 class="rv">De un à dix mois, meublé, sans dépôt de garantie.</h3>
+        <p class="rv">Pour les mutations professionnelles, les stages et les formations. Un excellent compromis entre le rendement du saisonnier et la tranquillité du long terme.</p>
+        <p class="rv">Nous sélectionnons les dossiers, rédigeons le bail et gérons les états des lieux.</p>
+        
+      </div>
+    </div>
+  </section>
+  <div class="sp-lg"></div>
+  <section class="wrap s-split">
+    <div class="row">
+      <div class="col c8">
+        <div class="picture ratio-wide rv-img"><img src="assets/longue.jpg" alt="Arcades de la place des Vosges, Paris" loading="lazy"></div>
+      </div>
+      <div class="col c4">
+        <span class="subtitle rv">Longue durée</span>
+        <h3 class="rv">Le revenu régulier, sans la charge mentale.</h3>
+        <p class="rv">Sélection du locataire, garanties, quittances, révisions, régularisation des charges, relances. Vous recevez un relevé mensuel et rien d'autre.</p>
+        
+      </div>
+    </div>
+  </section>
+  <div class="sp-lg"></div>
+  <section class="wrap s-split reverse">
+    <div class="row">
+      <div class="col c8">
+        <div class="picture ratio-wide rv-img"><img src="assets/bureaux.jpg" alt="Passage couvert, Paris" loading="lazy"></div>
+      </div>
+      <div class="col c4">
+        <span class="subtitle rv">Bureaux &amp; commerces</span>
+        <h3 class="rv">Des plateaux qui trouvent preneur.</h3>
+        <p class="rv">Commercialisation, baux professionnels et commerciaux, aménagement, suivi des preneurs et des travaux de raccordement.</p>
+        
+      </div>
+    </div>
+  </section>
+  <div class="sp-lg"></div>
+  <section class="wrap">
+    <div class="s-list">
+      <div class="s-item rv"><span class="num">01</span><div class="body">
+        <h3>Mise sur le marché</h3><p>Reportage photo professionnel, rédaction des annonces, diffusion multicanale, tarification suivie semaine par semaine.</p>
+      </div></div>
+      <div class="s-item rv"><span class="num">02</span><div class="body">
+        <h3>Sélection et contrats</h3><p>Étude des dossiers, garanties, rédaction et signature électronique des baux, encaissement des dépôts.</p>
+      </div></div>
+      <div class="s-item rv"><span class="num">03</span><div class="body">
+        <h3>États des lieux</h3><p>Entrée et sortie, photographiés et horodatés, avec chiffrage contradictoire des remises en état.</p>
+      </div></div>
+      <div class="s-item rv"><span class="num">04</span><div class="body">
+        <h3>Ménage et linge</h3><p>Équipes formées au protocole hôtelier, linge blanchi en externe, consommables réassortis.</p>
+      </div></div>
+      <div class="s-item rv"><span class="num">05</span><div class="body">
+        <h3>Maintenance</h3><p>Plombier, électricien, serrurier, chauffagiste : artisans de confiance, interventions tracées, urgences sous 24 h.</p>
+      </div></div>
+      <div class="s-item rv"><span class="num">06</span><div class="body">
+        <h3>Reporting</h3><p>Relevé mensuel : revenus, charges, interventions, taux d'occupation, à jour au 5 du mois.</p>
+      </div></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== PIED DE PAGE ===================== -->
+<footer id="footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-col">
+        <span class="subtitle">Urbaniak</span>
+        <p style="font-size:14px">Gestion de patrimoine immobilier<br>Paris</p>
+      </div>
+      <div class="f-col">
+        <span class="subtitle">Navigation</span>
+        <ul>
+          <li><a href="expertise.html">Notre expertise</a></li>
+          <li><a href="gestion.html">La gestion</a></li>
+          <li><a href="contact.html">Nous écrire</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <span class="subtitle">De l'autre côté</span>
+        <ul>
+          <li><a href="https://apex22-ops.github.io/sesame-stays" data-door>Sesame Stays</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <span class="subtitle">Contact</span>
+        <ul>
+          <li><a href="tel:+331XXXXXXXX">+33 (0)1 XX XX XX XX</a></li>
+          <li><a href="mailto:contact@urbaniakimmo.com">contact@urbaniakimmo.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© <span id="yr"></span> Urbaniak — Tous droits réservés</span>
+      <span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="credits.html">Crédits photo</a></span>
+    </div>
+  </div>
+</footer>
+
+<div id="passage" aria-hidden="true"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/door.js"></script>
+</body>
+</html>

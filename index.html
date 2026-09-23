@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Urbaniak — Gestion de patrimoine immobilier</title>
+<meta name="description" content="Audit, conseil et gestion locative de patrimoine immobilier à Paris. Location saisonnière, bail mobilité, longue durée, bureaux. Urbaniak accompagne les propriétaires de l'audit à la commercialisation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="hero-dark">
+
+<!-- L'arrivée : la lumière chaude se retire, on est de retour -->
+<div id="arrival" aria-hidden="true"></div>
+
+<!-- ===================== EN-TÊTE ===================== -->
+<header id="header">
+  <div class="wrap">
+    <div class="h-side">
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <a href="expertise.html" class="h-nav d-lg">Notre expertise</a>
+    </div>
+
+    <a href="index.html" class="brand" aria-label="Urbaniak — accueil">
+      <svg class="mark" viewBox="0 0 126 112" fill="none" aria-hidden="true">
+        <path d="M6 106 V52 C6 26 31 6 63 6 C95 6 120 26 120 52 V106" stroke="currentColor" stroke-width="3"/>
+        <path d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#B99B5F" stroke-width="2.5"/>
+        <path d="M63 32 V106" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M55 4 L71 4 L74 24 L52 24 Z" fill="currentColor"/>
+        <path d="M2 106 H124" stroke="currentColor" stroke-width="6"/>
+      </svg>
+      <span class="name">Urbaniak</span>
+      <span class="base">Gestion de patrimoine immobilier</span>
+    </a>
+
+    <div class="h-side right">
+      <a href="contact.html" class="h-nav">Nous écrire</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== PANNEAU DE NAVIGATION ===================== -->
+<nav id="panel" aria-label="Navigation principale">
+  <div class="panel-grid">
+    <div class="panel-col">
+      <span class="subtitle">La maison</span>
+      <ul class="panel-list">
+        <li><a href="expertise.html">Notre expertise</a></li>
+        <li><a href="expertise.html#audit">L'audit</a></li>
+        <li><a href="gestion.html">La gestion</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div class="panel-col">
+      <span class="subtitle">Les usages</span>
+      <ul class="panel-list">
+        <li><a href="gestion.html#saisonnier">Location saisonnière</a></li>
+        <li><a href="gestion.html#mobilite">Bail mobilité</a></li>
+        <li><a href="gestion.html#longue">Longue durée</a></li>
+        <li><a href="gestion.html#bureaux">Bureaux &amp; commerces</a></li>
+      </ul>
+    </div>
+    <div class="panel-col">
+      <span class="subtitle">De l'autre côté</span>
+      <ul class="panel-list">
+        <li><a href="https://apex22-ops.github.io/sesame-stays" data-door>Sesame Stays</a></li>
+      </ul>
+      <p style="margin-top:22px;color:rgba(239,237,232,.6);font-size:13px;max-width:30ch">
+        Le catalogue des locations saisonnières que nous gérons.
+      </p>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HÉROS ===================== -->
+<section id="intro">
+  <div class="media">
+    <img src="assets/hero.jpg" alt="Passage voûté de la place des Vosges, Paris" fetchpriority="high">
+  </div>
+  <div class="inner wrap">
+    <span class="subtitle hero-t">Paris · Saint-Tropez · Monaco · Deauville</span>
+    <h1 class="hero-t">Chaque bien a une porte.<br>Encore faut-il savoir <em>laquelle ouvrir</em>.</h1>
+  </div>
+  <span class="scroll-cue"><i></i>Découvrir</span>
+</section>
+
+<main>
+
+  <!-- ---- Déclaration ---- -->
+  <div class="sp-lg"></div>
+  <section class="wrap">
+    <div class="s-intro">
+      <span class="subtitle rv">Ce que nous faisons</span>
+      <h2 class="rv">Nous prenons en charge le patrimoine immobilier de nos clients, de l'audit initial jusqu'à la remise des clés — et tout ce qui vit entre les deux.</h2>
+      <p class="lead rv">Quelques appartements en location saisonnière, un immeuble entier, des bureaux à relouer, un bien à vendre : nous regardons d'abord ce que vous avez, puis nous disons honnêtement ce qu'il peut devenir.</p>
+    </div>
+  </section>
+
+  <!-- ---- L'audit ---- -->
+  <div class="sp-lg"></div>
+  <section class="wrap s-split">
+    <div class="row">
+      <div class="col c8">
+        <div class="picture ratio-wide rv-img">
+          <img src="assets/audit.jpg" alt="Façade haussmannienne, Paris" loading="lazy">
+        </div>
+      </div>
+      <div class="col c4">
+        <span class="subtitle rv">01 — L'audit</span>
+        <h3 class="rv">Savoir exactement ce que vaut chaque mètre carré, et pour quel usage.</h3>
+        <p class="rv">Nous visitons, mesurons, photographions. Nous comparons votre bien au marché réel de sa rue, pas à une moyenne d'arrondissement. Nous vérifions ce que la copropriété, le bail et la ville autorisent.</p>
+        <p class="link rv"><a href="expertise.html#audit">Le détail de l'audit</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Duo ---- -->
+  <div class="sp-md"></div>
+  <section class="wrap">
+    <div class="row">
+      <div class="col c6">
+        <div class="picture ratio-tall rv-img">
+          <img src="assets/arbitrage.jpg" alt="Pavillon de la place des Vosges, Paris" loading="lazy">
+        </div>
+        <div style="padding-top:26px">
+          <h3 class="rv">L'arbitrage</h3>
+          <p class="rv">Saisonnier, bail mobilité, longue durée, bureau, vente : chaque piste est chiffrée, avec ses contraintes et son rendement net.</p>
+        </div>
+      </div>
+      <div class="col c6">
+        <div class="picture ratio-tall rv-img">
+          <img src="assets/scene.jpg" alt="Coin salon, fauteuil et bouquet" loading="lazy">
+        </div>
+        <div style="padding-top:26px">
+          <h3 class="rv">La mise en scène</h3>
+          <p class="rv">Design, mobilier, petits travaux, reportage photo : un bien se loue d'abord sur ce qu'il donne à voir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- L'accompagnement ---- -->
+  <div class="sp-lg"></div>
+  <section class="wrap s-split reverse">
+    <div class="row">
+      <div class="col c8">
+        <div class="picture ratio-wide rv-img">
+          <img src="assets/gestion.jpg" alt="Porte cochère monumentale, Paris" loading="lazy">
+        </div>
+      </div>
+      <div class="col c4">
+        <span class="subtitle rv">02 — La gestion</span>
+        <h2 class="rv">Vous ne recevez plus qu'un relevé.</h2>
+        <p class="rv">Mise sur le marché, sélection des locataires, états des lieux, ménage, maintenance, urgences du dimanche soir : nous tenons la ligne. Vous gardez la décision, nous prenons l'exécution.</p>
+        <p class="link rv"><a href="gestion.html">La gestion locative</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Les métiers ---- -->
+  <div class="sp-lg"></div>
+  <section class="wrap">
+    <div class="row">
+      <div class="col c4">
+        <span class="subtitle rv">Les métiers</span>
+        <h2 class="rv">Un seul interlocuteur, six savoir-faire.</h2>
+      </div>
+      <div class="col c8">
+        <div class="s-list">
+          <div class="s-item rv"><span class="num">01</span><div class="body">
+            <h3>Audit &amp; conseil</h3>
+            <p>Diagnostic du bien, étude du marché local, arbitrage entre les usages possibles, projection de rendement.</p>
+          </div></div>
+          <div class="s-item rv"><span class="num">02</span><div class="body">
+            <h3>Mise sur le marché</h3>
+            <p>Reportage photo, annonces, tarification dynamique, diffusion sur les plateformes et sur Sesame Stays.</p>
+          </div></div>
+          <div class="s-item rv"><span class="num">03</span><div class="body">
+            <h3>Gestion locative</h3>
+            <p>Réservations, contrats, états des lieux, encaissements, relation locataire, reporting mensuel.</p>
+          </div></div>
+          <div class="s-item rv"><span class="num">04</span><div class="body">
+            <h3>Ménage &amp; linge</h3>
+            <p>Équipes formées, protocole hôtelier, linge blanchi, consommables réassortis entre chaque séjour.</p>
+          </div></div>
+          <div class="s-item rv"><span class="num">05</span><div class="body">
+            <h3>Maintenance &amp; petits travaux</h3>
+            <p>Interventions courantes, artisans de confiance, suivi des chantiers, garantie de remise en état.</p>
+          </div></div>
+          <div class="s-item rv"><span class="num">06</span><div class="body">
+            <h3>Design &amp; aménagement</h3>
+            <p>Décoration, achat de mobilier, mise en valeur des volumes, identité propre à chaque adresse.</p>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Bandeau chiffres ---- -->
+  <div class="sp-lg"></div>
+  <section class="s-band">
+    <div class="wrap">
+      <div class="row">
+        <div class="col c4">
+          <span class="subtitle rv">La maison en bref</span>
+          <h2 class="rv">Une gestion qui se mesure.</h2>
+        </div>
+        <div class="col c8">
+          <div class="stats">
+            <div class="stat rv"><div class="n">Paris</div><div class="l">et proche couronne</div></div>
+            <div class="stat rv"><div class="n">24 h</div><div class="l">délai de réponse aux urgences</div></div>
+            <div class="stat rv"><div class="n">1</div><div class="l">interlocuteur par propriétaire</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ---- Les destinations ---- -->
+  <div class="sp-lg"></div>
+  <section class="wrap">
+    <div class="s-intro">
+      <span class="subtitle rv">Où nous intervenons</span>
+      <h2 class="rv">Quatre marchés que nous connaissons rue par rue.</h2>
+      <p class="lead rv">Paris toute l'année, la Côte et la Normandie au rythme des saisons. Chaque marché a ses règles, ses pics et ses pièges — nous ne conseillons que là où nous savons vraiment.</p>
+    </div>
+    <div class="sp-sm"></div>
+    <div class="row">
+      <div class="col c6">
+        <div class="picture ratio-wide rv-img"><img src="assets/paris.jpg" alt="Toits de Paris" loading="lazy"></div>
+        <div style="padding-top:22px">
+          <h3 class="rv">Paris</h3>
+          <p class="rv">Appartements, immeubles de rapport et bureaux. Le marché le plus réglementé de France : changement d'usage, numéro d'enregistrement, plafonnement des loyers. C'est là que l'audit compte le plus.</p>
+        </div>
+      </div>
+      <div class="col c6">
+        <div class="picture ratio-wide rv-img"><img src="assets/tropez.jpg" alt="Le port de Saint-Tropez" loading="lazy"></div>
+        <div style="padding-top:22px">
+          <h3 class="rv">Saint-Tropez</h3>
+          <p class="rv">Villas, mas et pied-à-terre dans le Golfe. Une saison courte et très dense : la tarification à la semaine et la qualité de l'accueil font toute la différence de rendement.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sp-sm"></div>
+    <div class="row">
+      <div class="col c6">
+        <div class="picture ratio-wide rv-img"><img src="assets/monaco.jpg" alt="Le Rocher de Monaco" loading="lazy"></div>
+        <div style="padding-top:22px">
+          <h3 class="rv">Monaco</h3>
+          <p class="rv">Appartements et penthouses en Principauté. Un régime juridique propre, une clientèle internationale et des séjours longs — l'inverse exact de la logique parisienne.</p>
+        </div>
+      </div>
+      <div class="col c6">
+        <div class="picture ratio-wide rv-img"><img src="assets/deauville.jpg" alt="Parasols sur la plage de Deauville" loading="lazy"></div>
+        <div style="padding-top:22px">
+          <h3 class="rv">Deauville</h3>
+          <p class="rv">Villas anglo-normandes et appartements face aux Planches. Week-ends, ponts et vacances scolaires : un calendrier qui se pilote à la nuitée, pas au mois.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Typologies ---- -->
+  <div class="sp-lg"></div>
+  <section class="wrap">
+    <div class="s-intro">
+      <span class="subtitle rv">Les biens que nous gérons</span>
+      <h2 class="rv">Du studio saisonnier à l'immeuble entier.</h2>
+    </div>
+    <div class="sp-sm"></div>
+    <div class="row">
+      <div class="col c4">
+        <div class="picture ratio-sq rv-img"><img src="assets/saisonnier.jpg" alt="Séjour d'un appartement meublé" loading="lazy"></div>
+        <div style="padding-top:22px">
+          <h3 class="rv">Location saisonnière</h3>
+          <p class="rv">Appartements meublés loués à la nuitée, gérés de bout en bout et référencés sur Sesame Stays.</p>
+        </div>
+      </div>
+      <div class="col c4">
+        <div class="picture ratio-sq rv-img"><img src="assets/longue.jpg" alt="Arcades de la place des Vosges, Paris" loading="lazy"></div>
+        <div style="padding-top:22px">
+          <h3 class="rv">Immeubles complets</h3>
+          <p class="rv">Saisonnier ou longue durée, avec optimisation lot par lot et pilotage des parties communes.</p>
+        </div>
+      </div>
+      <div class="col c4">
+        <div class="picture ratio-sq rv-img"><img src="assets/bureaux.jpg" alt="Passage couvert, Paris" loading="lazy"></div>
+        <div style="padding-top:22px">
+          <h3 class="rv">Bureaux &amp; commerces</h3>
+          <p class="rv">Commercialisation, baux professionnels, aménagement des plateaux et suivi des preneurs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LA PORTE SÉSAME ===================== -->
+  <div class="sp-lg"></div>
+  <section id="sesame">
+    <div class="wrap">
+      <span class="subtitle rv">De l'autre côté</span>
+      <h2 class="rv">Sesame Stays</h2>
+      <p class="rv">Les biens en location saisonnière que nous gérons y sont réservables directement. C'est la même porte — vue de l'autre côté.</p>
+
+      <button class="door-btn" id="doorBtn" aria-label="Franchir la porte vers Sesame Stays">
+        <svg viewBox="0 0 126 112" fill="none" aria-hidden="true">
+          <path d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106 Z" fill="#22302A"/>
+          <!-- l'enfilade dorée, révélée quand les vantaux s'effacent -->
+          <g class="depth">
+            <path d="M42 106 V58 C42 45 51 36 63 36 C75 36 84 45 84 58 V106" transform="translate(63,106) scale(0.94) translate(-63,-106)" stroke="#B99B5F" stroke-width="0.7" vector-effect="non-scaling-stroke" fill="none" opacity="0.9"/>
+            <path d="M42 106 V58 C42 45 51 36 63 36 C75 36 84 45 84 58 V106" transform="translate(63,106) scale(0.82) translate(-63,-106)" stroke="#B99B5F" stroke-width="0.7" vector-effect="non-scaling-stroke" fill="none" opacity="0.8"/>
+            <path d="M42 106 V58 C42 45 51 36 63 36 C75 36 84 45 84 58 V106" transform="translate(63,106) scale(0.66) translate(-63,-106)" stroke="#B99B5F" stroke-width="0.7" vector-effect="non-scaling-stroke" fill="none" opacity="0.64"/>
+            <path d="M42 106 V58 C42 45 51 36 63 36 C75 36 84 45 84 58 V106" transform="translate(63,106) scale(0.53) translate(-63,-106)" stroke="#B99B5F" stroke-width="0.7" vector-effect="non-scaling-stroke" fill="none" opacity="0.5"/>
+            <path d="M42 106 V58 C42 45 51 36 63 36 C75 36 84 45 84 58 V106" transform="translate(63,106) scale(0.42) translate(-63,-106)" stroke="#B99B5F" stroke-width="0.7" vector-effect="non-scaling-stroke" fill="none" opacity="0.38"/>
+            <path d="M42 106 V58 C42 45 51 36 63 36 C75 36 84 45 84 58 V106" transform="translate(63,106) scale(0.34) translate(-63,-106)" stroke="#B99B5F" stroke-width="0.7" vector-effect="non-scaling-stroke" fill="none" opacity="0.28"/>
+            <path d="M42 106 V58 C42 45 51 36 63 36 C75 36 84 45 84 58 V106" transform="translate(63,106) scale(0.27) translate(-63,-106)" stroke="#B99B5F" stroke-width="0.7" vector-effect="non-scaling-stroke" fill="none" opacity="0.2"/>
+            <path d="M42 106 V58 C42 45 51 36 63 36 C75 36 84 45 84 58 V106" transform="translate(63,106) scale(0.215) translate(-63,-106)" stroke="#B99B5F" stroke-width="0.7" vector-effect="non-scaling-stroke" fill="none" opacity="0.13"/>
+          </g>
+          <!-- vantail gauche -->
+          <g class="leaf leaf-l">
+            <path d="M38 106 V56 C38 40 49 30 63 30 V106 Z" fill="#2B3B33" stroke="#EFEDE8" stroke-width="1"/>
+            <path d="M63 56 L40 50 M63 56 L44 42 M63 56 L52 33 M63 56 V30" stroke="#B99B5F" stroke-width="0.4"/>
+            <path d="M46 56 C46 47 53 41 63 41" stroke="#B99B5F" stroke-width="0.35" fill="none"/>
+            <path d="M38 56 H63" stroke="#EFEDE8" stroke-width="0.9"/>
+            <rect x="43" y="60" width="16" height="18" stroke="#EFEDE8" stroke-width="0.5" fill="none"/>
+            <path d="M48.3 60 V78 M53.6 60 V78 M43 66 H59 M43 72 H59" stroke="#B99B5F" stroke-width="0.3"/>
+            <rect x="43" y="82" width="16" height="20" stroke="#EFEDE8" stroke-width="0.5" fill="none"/>
+            <circle cx="60.5" cy="80" r="1.3" fill="#B99B5F"/>
+          </g>
+          <!-- vantail droit -->
+          <g class="leaf leaf-r">
+            <path d="M88 106 V56 C88 40 77 30 63 30 V106 Z" fill="#2B3B33" stroke="#EFEDE8" stroke-width="1"/>
+            <path d="M63 56 L86 50 M63 56 L82 42 M63 56 L74 33 M63 56 V30" stroke="#B99B5F" stroke-width="0.4"/>
+            <path d="M80 56 C80 47 73 41 63 41" stroke="#B99B5F" stroke-width="0.35" fill="none"/>
+            <path d="M88 56 H63" stroke="#EFEDE8" stroke-width="0.9"/>
+            <rect x="67" y="60" width="16" height="18" stroke="#EFEDE8" stroke-width="0.5" fill="none"/>
+            <path d="M72.3 60 V78 M77.6 60 V78 M67 66 H83 M67 72 H83" stroke="#B99B5F" stroke-width="0.3"/>
+            <rect x="67" y="82" width="16" height="20" stroke="#EFEDE8" stroke-width="0.5" fill="none"/>
+            <circle cx="65.5" cy="80" r="1.3" fill="#B99B5F"/>
+          </g>
+          <!-- chambranle, archivolte, agrafe, seuil -->
+          <path d="M38 106 V56 C38 40 49 30 63 30 C77 30 88 40 88 56 V106" stroke="#EFEDE8" stroke-width="1.2" fill="none"/>
+          <path d="M8 106 V52 C8 26 32 6 63 6 C94 6 118 26 118 52 V106" stroke="#EFEDE8" stroke-width="2.5" fill="none"/>
+          <path d="M17 106 V53 C17 32 37 15 63 15 C89 15 109 32 109 53 V106" stroke="#EFEDE8" stroke-width="0.6" fill="none" opacity="0.45"/>
+          <path d="M56 5 L70 5 L73 23 L53 23 Z" fill="#EFEDE8"/>
+          <path d="M2 106 H124" stroke="#EFEDE8" stroke-width="5"/>
+        </svg>
+        <span class="door-hint">Franchir la porte</span>
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== PIED DE PAGE ===================== -->
+<footer id="footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-col">
+        <span class="subtitle">Urbaniak</span>
+        <p style="font-size:14px">Gestion de patrimoine immobilier<br>Paris</p>
+      </div>
+      <div class="f-col">
+        <span class="subtitle">Navigation</span>
+        <ul>
+          <li><a href="expertise.html">Notre expertise</a></li>
+          <li><a href="gestion.html">La gestion</a></li>
+          <li><a href="contact.html">Nous écrire</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <span class="subtitle">De l'autre côté</span>
+        <ul>
+          <li><a href="https://apex22-ops.github.io/sesame-stays" data-door>Sesame Stays</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <span class="subtitle">Contact</span>
+        <ul>
+          <li><a href="tel:+331XXXXXXXX">+33 (0)1 XX XX XX XX</a></li>
+          <li><a href="mailto:contact@urbaniakimmo.com">contact@urbaniakimmo.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© <span id="yr"></span> Urbaniak — Tous droits réservés</span>
+      <span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="credits.html">Crédits photo</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Le passage : lumière chaude qui envahit l'écran -->
+<div id="passage" aria-hidden="true"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/door.js"></script>
+</body>
+</html>
