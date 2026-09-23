@@ -77,28 +77,62 @@
   }
 
   /* ---- Apparitions au défilement --------------------------------------
-     Même mécanique que passalacqua.it : une simple classe qui bascule et
-     laisse la transition CSS de .75s faire le travail. Les colonnes d'une
-     même rangée sont décalées, comme leur data-animation-delay. */
+     Une classe bascule, la transition CSS fait le reste. Les groupes
+     marqués data-stagger cadencent leurs enfants (sur-titre → titre →
+     texte) ; les colonnes d'une rangée se décalent légèrement. */
   var blocks = Array.prototype.slice.call(document.querySelectorAll('[data-animation]'));
-  if (reduce) {
-    blocks.forEach(function (el) { el.classList.add('a1'); });
-  } else if ('IntersectionObserver' in window) {
+  function show(el) { el.classList.add('a1'); }
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    blocks.forEach(show);
+  } else {
     blocks.forEach(function (el) {
-      var row = el.parentNode;
-      var rank = row ? Array.prototype.indexOf.call(row.children, el) : 0;
-      el.style.transitionDelay = rank > 0 ? (rank * 0.15) + 's' : '';
+      var p = el.parentNode, d = 0;
+      if (p && p.hasAttribute && p.hasAttribute('data-stagger')) {
+        d = Array.prototype.indexOf.call(p.children, el) * 0.11;
+      } else if (p && p.classList && p.classList.contains('bl')) {
+        d = Array.prototype.indexOf.call(p.children, el) * 0.14;
+      }
+      if (d) el.style.transitionDelay = d + 's';
     });
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
-        e.target.classList.add('a1');
-        io.unobserve(e.target);
+        show(e.target);
+        io.unobserve(e.target);   // une seule fois : rien ne rejoue au retour
       });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.04 });
     blocks.forEach(function (el) { io.observe(el); });
-  } else {
-    blocks.forEach(function (el) { el.classList.add('a1'); });
+  }
+
+  /* ---- Mouvements liés au défilement ------------------------------------
+     Un seul rAF pour le héros et les quelques grandes images. Rien n'est
+     calculé dans l'écouteur de défilement lui-même. */
+  var heroImg = document.querySelector('#heroMedia img');
+  var pars = Array.prototype.slice.call(document.querySelectorAll('.picture.par .par-in'));
+
+  if (!reduce && (heroImg || pars.length)) {
+    var vh = window.innerHeight, queued = false;
+
+    function frame() {
+      queued = false;
+      if (heroImg) {
+        // 1.03 → 1 sur la hauteur du héros : on doit le sentir, pas le voir.
+        var t = Math.min(1, Math.max(0, (window.pageYOffset || 0) / vh));
+        heroImg.style.transform = 'scale(' + (1.03 - 0.03 * t).toFixed(4) + ')';
+      }
+      for (var i = 0; i < pars.length; i++) {
+        var el = pars[i], r = el.parentNode.getBoundingClientRect();
+        if (r.bottom < -240 || r.top > vh + 240) continue;
+        var p = (r.top + r.height / 2 - vh / 2) / vh;      // -1 … 1
+        el.style.transform = 'translate3d(0,' + (p * 4.5).toFixed(2) + '%,0)';
+      }
+    }
+    function onMove() { if (!queued) { queued = true; requestAnimationFrame(frame); } }
+
+    window.addEventListener('scroll', onMove, { passive: true });
+    window.addEventListener('resize', function () { vh = window.innerHeight; onMove(); }, { passive: true });
+    frame();
   }
 
   /* ---- Ancres ---------------------------------------------------------- */
